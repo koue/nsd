@@ -1,0 +1,1859 @@
+2025-09-06 17:47  sthen
+
+	* usr.sbin/nsd/server.c: patch to deactivate upstream change which
+	  disables TLSv1.2 if v1.3 is available locally
+
+2025-09-06 17:43  sthen
+
+	* usr.sbin/nsd/Makefile.bsd-wrapper: update configure flags for NSD
+	  4.13.0; - ratelimit is now enabled by default upstream so no need
+	  to specify - disable dnstap which has optional deps to make sure
+	  they don't get picked up
+
+2025-09-06 17:41  sthen
+
+	* usr.sbin/nsd/: Makefile.in, aclocal.m4, config.guess,
+	  config.h.in, config.sub, configlexer.lex, configparser.y,
+	  configure, configure.ac, difffile.c, dname.c, dns.c, dns.h,
+	  edns.h, install-sh, ipc.c, ixfr.c, ixfrcreate.c, mini_event.c,
+	  namedb.c, namedb.h, netio.c, nsd-checkconf.8.in, nsd-checkconf.c,
+	  nsd-checkzone.8.in, nsd-control.8.in, nsd-mem.c, nsd.8.in, nsd.c,
+	  nsd.conf.5.in, nsd.conf.sample.in, nsd.h, nsec3.c, options.c,
+	  options.h, query.c, query.h, rbtree.c, rdata.c, remote.c,
+	  remote.h, server.c, tsig.c, util.c, util.h, verify.c,
+	  xfrd-catalog-zones.c, xfrd-tcp.c, xfrd-tcp.h, xfrd.c, zonec.h,
+	  dnstap/dnstap.m4, doc/ChangeLog, doc/README, doc/RELNOTES,
+	  simdzone/Makefile.in: merge NSD 4.13.0
+
+2025-09-06 17:39  sthen
+
+	* usr.sbin/nsd/: config.h.in, configure, Makefile.in,
+	  configparser.y, configure.ac, mkinstalldirs, nsd.8.in, nsd.c,
+	  nsd.conf.5.in, options.c, rdata.c, remote.c, server.c: import NSD
+	  4.13.0 (from right dir this time..)
+
+2025-09-06 17:38  sthen
+
+	* usr.sbin/nsd/: metrics.c, metrics.h, xdp-dns-redirect_kern.c,
+	  xdp-server.c, xdp-server.h, xdp-util.c, xdp-util.h,
+	  simdzone/acx_nlnetlabs.m4, simdzone/src/generic/atma.h: Initial
+	  revision
+
+2025-09-06 17:38  sthen
+
+	* usr.sbin/nsd/: Makefile.in, aclocal.m4, install-sh, ixfr.c,
+	  mini_event.c, mkinstalldirs, namedb.h, nsd-checkconf.8.in,
+	  nsd-checkconf.c, nsd-control.8.in, nsd-mem.c, nsd.8.in, nsd.c,
+	  nsd.conf.sample.in, nsd.h, nsec3.c, options.c, options.h,
+	  query.c, query.h, rdata.c, Makefile.bsd-wrapper, config.sub,
+	  configlexer.lex, configparser.y, configure, configure.ac,
+	  difffile.c, dname.c, dns.c, edns.h, ipc.c, ixfrcreate.c,
+	  namedb.c, netio.c, nsd.conf.5.in, rbtree.c, remote.c, remote.h,
+	  server.c, tsig.c, util.c, util.h, xfrd-tcp.c, config.guess,
+	  config.h.in, dns.h, metrics.c, metrics.h, nsd-checkzone.8.in,
+	  verify.c, xdp-dns-redirect_kern.c, xdp-server.c, xdp-server.h,
+	  xdp-util.c, xdp-util.h, xfrd-catalog-zones.c, xfrd-tcp.h, xfrd.c,
+	  zonec.h, dnstap/dnstap.m4, doc/ChangeLog, doc/README,
+	  doc/RELNOTES, simdzone/CHANGELOG.md, simdzone/Makefile.in,
+	  simdzone/acx_nlnetlabs.m4, simdzone/config.guess,
+	  simdzone/config.h.in, simdzone/config.sub, simdzone/configure,
+	  simdzone/configure.ac, simdzone/include/zone.h,
+	  simdzone/src/isadetection.h, simdzone/src/zone.c,
+	  simdzone/src/fallback/parser.c, simdzone/src/generic/atma.h,
+	  simdzone/src/generic/base16.h, simdzone/src/generic/loc.h,
+	  simdzone/src/generic/number.h, simdzone/src/generic/parser.h,
+	  simdzone/src/generic/type.h, simdzone/src/generic/types.h,
+	  simdzone/src/haswell/parser.c, simdzone/src/westmere/parser.c,
+	  simdzone/src/westmere/type.h: import NSD 4.13.0, thanks phessler@
+	  for tests on arm64, amd64, riscv64, octeon
+
+2025-09-03 18:46  sthen
+
+	* usr.sbin/nsd/: Makefile.in, README.md, axfr.c, buffer.h,
+	  config.guess, config.h.in, config.sub, configlexer.lex,
+	  configparser.y, configure, configure.ac, dbaccess.c, dbcreate.c,
+	  difffile.c, difffile.h, dname.c, dname.h, dns.c, dns.h, edns.c,
+	  edns.h, ipc.c, ixfr.c, namedb.h, netio.h, nsd-checkconf.8.in,
+	  nsd-checkconf.c, nsd-checkzone.8.in, nsd-checkzone.c,
+	  nsd-control.8.in, nsd-control.c, nsd-mem.c, nsd.8.in, nsd.c,
+	  nsd.conf.5.in, nsd.conf.sample.in, nsd.h, nsec3.c, options.c,
+	  options.h, query.c, query.h, rdata.c, region-allocator.c,
+	  region-allocator.h, remote.c, remote.h, server.c, util.c, util.h,
+	  xfrd-catalog-zones.c, xfrd-notify.c, xfrd-tcp.c, xfrd-tcp.h,
+	  xfrd.c, xfrd.h, zonec.c, zonec.h, dnstap/dnstap.c,
+	  dnstap/dnstap_collector.c, doc/ChangeLog, doc/README,
+	  doc/RELNOTES, simdzone/Makefile.in: merge NSD 4.11.0
+
+2025-09-03 18:44  sthen
+
+	* usr.sbin/nsd/simdzone/: CHANGELOG.md, CONTRIBUTING.md, FORMAT.md,
+	  LICENSE, Makefile.in, README.md, config.guess, config.h.in,
+	  config.sub, configure, configure.ac, include/zone.h,
+	  include/zone/attributes.h, m4/ax_check_compile_flag.m4,
+	  src/attributes.h, src/bench.c, src/config.h.in, src/diagnostic.h,
+	  src/isadetection.h, src/zone.c, src/fallback/bench.c,
+	  src/fallback/bits.h, src/fallback/name.h, src/fallback/parser.c,
+	  src/fallback/scanner.h, src/fallback/text.h,
+	  src/generic/algorithm.h, src/generic/apl.h, src/generic/base16.h,
+	  src/generic/base32.h, src/generic/base64.h, src/generic/caa.h,
+	  src/generic/cert.h, src/generic/endian.h, src/generic/eui.h,
+	  src/generic/format.h, src/generic/gpos.h, src/generic/ilnp64.h,
+	  src/generic/ip4.h, src/generic/ip6.h, src/generic/loc.h,
+	  src/generic/name.h, src/generic/nsap.h, src/generic/nsec.h,
+	  src/generic/number.h, src/generic/nxt.h, src/generic/parser.h,
+	  src/generic/scanner.h, src/generic/svcb.h, src/generic/text.h,
+	  src/generic/time.h, src/generic/ttl.h, src/generic/type.h,
+	  src/generic/types.h, src/generic/wks.h, src/haswell/base32.h,
+	  src/haswell/bench.c, src/haswell/bits.h, src/haswell/parser.c,
+	  src/haswell/simd.h, src/westmere/base32.h, src/westmere/bench.c,
+	  src/westmere/bits.h, src/westmere/ip4.h, src/westmere/parser.c,
+	  src/westmere/simd.h, src/westmere/time.h, src/westmere/type.h:
+	  Initial revision
+
+2025-09-03 18:44  sthen
+
+	* usr.sbin/nsd/: configlexer.lex, ixfr.c, namedb.h, rbtree.h,
+	  Makefile.in, README.md, aclocal.m4, acx_nlnetlabs.m4, answer.h,
+	  axfr.c, configparser.y, configure, configure.ac, dbcreate.c,
+	  difffile.c, dns.c, edns.h, ipc.h, netio.h, nsd-checkconf.8.in,
+	  nsd-mem.c, nsd.c, nsd.conf.5.in, nsec3.c, options.h, popen3.h,
+	  rdata.c, region-allocator.h, remote.c, udb.h, util.c, verify.h,
+	  xfr-inspect.c, xfrd-catalog-zones.c, xfrd-disk.c, xfrd-notify.c,
+	  xfrd-tcp.c, xfrd.h, zonec.c, answer.c, axfr.h, bitset.h,
+	  buffer.c, buffer.h, config.guess, config.h.in, config.sub,
+	  dbaccess.c, difffile.h, dname.c, dname.h, dns.h, edns.c, ipc.c,
+	  ixfr.h, ixfrcreate.c, ixfrcreate.h, nsd-checkconf.c,
+	  nsd-checkzone.8.in, nsd-checkzone.c, nsd-control.8.in,
+	  nsd-control.c, nsd.8.in, nsd.conf.sample.in, nsd.h, nsec3.h,
+	  options.c, packet.h, query.c, query.h, rdata.h,
+	  region-allocator.c, remote.h, rrl.c, server.c, tsig-openssl.h,
+	  tsig.h, util.h, verify.c, xfrd-catalog-zones.h, xfrd-tcp.h,
+	  xfrd.c, zonec.h, dnstap/dnstap.c, dnstap/dnstap.h,
+	  dnstap/dnstap_collector.c, doc/ChangeLog, doc/README,
+	  doc/RELNOTES, simdzone/CHANGELOG.md, simdzone/CONTRIBUTING.md,
+	  simdzone/FORMAT.md, simdzone/LICENSE, simdzone/Makefile.in,
+	  simdzone/README.md, simdzone/config.guess, simdzone/config.h.in,
+	  simdzone/config.sub, simdzone/configure, simdzone/configure.ac,
+	  simdzone/include/zone.h, simdzone/include/zone/attributes.h,
+	  simdzone/m4/ax_check_compile_flag.m4, simdzone/src/attributes.h,
+	  simdzone/src/bench.c, simdzone/src/config.h.in,
+	  simdzone/src/diagnostic.h, simdzone/src/isadetection.h,
+	  simdzone/src/zone.c, simdzone/src/fallback/bench.c,
+	  simdzone/src/fallback/bits.h, simdzone/src/fallback/name.h,
+	  simdzone/src/fallback/parser.c, simdzone/src/fallback/scanner.h,
+	  simdzone/src/fallback/text.h, simdzone/src/generic/algorithm.h,
+	  simdzone/src/generic/apl.h, simdzone/src/generic/base16.h,
+	  simdzone/src/generic/base32.h, simdzone/src/generic/base64.h,
+	  simdzone/src/generic/caa.h, simdzone/src/generic/cert.h,
+	  simdzone/src/generic/endian.h, simdzone/src/generic/eui.h,
+	  simdzone/src/generic/format.h, simdzone/src/generic/gpos.h,
+	  simdzone/src/generic/ilnp64.h, simdzone/src/generic/ip4.h,
+	  simdzone/src/generic/ip6.h, simdzone/src/generic/loc.h,
+	  simdzone/src/generic/name.h, simdzone/src/generic/nsap.h,
+	  simdzone/src/generic/nsec.h, simdzone/src/generic/number.h,
+	  simdzone/src/generic/nxt.h, simdzone/src/generic/parser.h,
+	  simdzone/src/generic/scanner.h, simdzone/src/generic/svcb.h,
+	  simdzone/src/generic/text.h, simdzone/src/generic/time.h,
+	  simdzone/src/generic/ttl.h, simdzone/src/generic/type.h,
+	  simdzone/src/generic/types.h, simdzone/src/generic/wks.h,
+	  simdzone/src/haswell/base32.h, simdzone/src/haswell/bench.c,
+	  simdzone/src/haswell/bits.h, simdzone/src/haswell/parser.c,
+	  simdzone/src/haswell/simd.h, simdzone/src/westmere/base32.h,
+	  simdzone/src/westmere/bench.c, simdzone/src/westmere/bits.h,
+	  simdzone/src/westmere/ip4.h, simdzone/src/westmere/parser.c,
+	  simdzone/src/westmere/simd.h, simdzone/src/westmere/time.h,
+	  simdzone/src/westmere/type.h, util/proxy_protocol.c,
+	  util/proxy_protocol.h: import NSD 4.11.0, ok florian phessler
+
+2024-08-17 09:07  florian
+
+	* usr.sbin/nsd/: nsd.8.in, nsd.conf.5.in: Since we are not using a
+	  pid file the manuals render a bit strange.  Pointed out by tb
+
+2024-04-15 12:44  florian
+
+	* usr.sbin/nsd/: aclocal.m4, config.guess, config.h.in, config.sub,
+	  configure, configure.ac: Sync to autoconf 2.71 upstream built
+	  infrastructure
+
+	  This reduces the diff when doing updates considerably.  No change
+	  in .o files.
+
+	  Much help & OK sthen
+
+2024-04-12 15:53  florian
+
+	* usr.sbin/nsd/: Makefile.in, acx_nlnetlabs.m4, buffer.h,
+	  config.h.in, configlexer.lex, configparser.y, configure,
+	  configure.ac, difffile.c, difffile.h, dname.c, dname.h, namedb.h,
+	  nsd-checkconf.8.in, nsd-checkconf.c, nsd-checkzone.8.in,
+	  nsd-control.8.in, nsd-control.c, nsd-mem.c, nsd.8.in, nsd.c,
+	  nsd.conf.5.in, nsd.conf.sample.in, options.c, options.h, query.c,
+	  remote.c, server.c, util.c, util.h, xfrd-catalog-zones.c,
+	  xfrd-catalog-zones.h, xfrd-disk.c, xfrd-tcp.c, xfrd.c, xfrd.h,
+	  doc/ChangeLog, doc/README, doc/RELNOTES: Update to nsd 4.9.1
+
+	  sparc64 built test by tb OK tb, sthen
+
+2024-04-01 14:24  florian
+
+	* usr.sbin/nsd/Makefile.bsd-wrapper: The previous unveil feature
+	  test assumed that having the unistd.h header file was enough. The
+	  new feature tests also requires that the required unveil system
+	  calls are supported.
+
+2023-12-20 17:29  florian
+
+	* usr.sbin/nsd/: Makefile.in, answer.c, axfr.c, config.h.in,
+	  configlexer.lex, configparser.y, configure, configure.ac,
+	  dbaccess.c, dbcreate.c, difffile.c, difffile.h, edns.c, ipc.c,
+	  ixfr.c, ixfr.h, ixfrcreate.c, namedb.h, nsd-checkconf.8.in,
+	  nsd-checkconf.c, nsd-checkzone.8.in, nsd-checkzone.c,
+	  nsd-control.8.in, nsd-mem.c, nsd.8.in, nsd.c, nsd.conf.5.in,
+	  nsd.conf.sample.in, nsd.h, nsec3.c, nsec3.h, options.c,
+	  options.h, query.c, query.h, remote.c, remote.h, rrl.c, server.c,
+	  udb.h, udbradtree.c, udbradtree.h, udbzone.c, udbzone.h,
+	  xfr-inspect.c, xfrd.c, xfrd.h, dnstap/dnstap_collector.c,
+	  doc/ChangeLog, doc/README, doc/RELNOTES, util/proxy_protocol.c,
+	  util/proxy_protocol.h: update to nsd 4.8.0 OK sthen
+
+2023-06-29 19:38  florian
+
+	* usr.sbin/nsd/: Makefile.bsd-wrapper, Makefile.in, README.md,
+	  acx_nlnetlabs.m4, answer.h, axfr.c, axfr.h, bitset.h, buffer.h,
+	  config.h.in, configlexer.lex, configparser.y, configure,
+	  configure.ac, dname.h, dns.h, edns.h, ixfr.c, ixfr.h,
+	  ixfrcreate.c, ixfrcreate.h, namedb.h, netio.h,
+	  nsd-checkconf.8.in, nsd-checkconf.c, nsd-checkzone.8.in,
+	  nsd-control.8.in, nsd-control.c, nsd.8.in, nsd.c, nsd.conf.5.in,
+	  nsd.conf.sample.in, nsd.h, options.c, options.h, packet.h,
+	  popen3.h, query.h, rbtree.h, rdata.h, region-allocator.h,
+	  remote.c, server.c, tsig-openssl.h, tsig.h, util.h, verify.c,
+	  verify.h, xfrd-disk.c, xfrd-tcp.c, xfrd.c, zonec.c, zonec.h,
+	  dnstap/dnstap.c, dnstap/dnstap.h, dnstap/dnstap_collector.c,
+	  doc/ChangeLog, doc/README, doc/RELNOTES: Update to nsd 4.7.0
+
+	  OK tb
+
+2022-11-14 21:09  sthen
+
+	* usr.sbin/nsd/: acx_nlnetlabs.m4, configparser.y, configure,
+	  configure.ac, difffile.c, dns.h, nsd-checkconf.8.in,
+	  nsd-checkconf.c, nsd-checkzone.8.in, nsd-control.8.in, nsd.8.in,
+	  nsd.conf.5.in, rdata.c, remote.c, server.c, verify.c, xfrd-tcp.c,
+	  xfrd.c, zlexer.lex, zonec.c, doc/ChangeLog, doc/README,
+	  doc/RELNOTES: merge conflicts
+
+2022-11-14 21:07  sthen
+
+	* usr.sbin/nsd/: README.md, SECURITY.md, doc/NSD-VERIFY-MODS:
+	  Initial revision
+
+2022-11-14 21:07  sthen
+
+	* usr.sbin/nsd/: README.md, axfr.c, config.h.in, dbaccess.c,
+	  dbcreate.c, difffile.h, dns.c, edns.c, iterated_hash.c, ixfr.c,
+	  ixfr.h, ixfrcreate.h, lookup3.c, nsd-checkzone.c, nsd.conf.5.in,
+	  nsd.h, nsec3.c, query.h, xfrd.c, zonec.c, Makefile.in,
+	  SECURITY.md, acx_nlnetlabs.m4, configlexer.lex, configparser.y,
+	  configure, configure.ac, difffile.c, dname.c, dns.h, ipc.c,
+	  mini_event.c, mini_event.h, namedb.h, nsd-checkconf.c,
+	  nsd-control-setup.sh.in, nsd.c, options.c, popen3.c, popen3.h,
+	  radtree.c, rdata.c, rdata.h, remote.c, rrl.h, server.c,
+	  tsig-openssl.c, udb.c, udb.h, util.h, verify.h, xfrd-tcp.h,
+	  xfrd.h, zlexer.lex, zonec.h, zparser.y, axfr.h, edns.h,
+	  ixfrcreate.c, namedb.c, nsd-checkconf.8.in, nsd-checkzone.8.in,
+	  nsd-control.8.in, nsd-control.c, nsd.8.in, nsd.conf.sample.in,
+	  options.h, query.c, siphash.c, util.c, verify.c, xfrd-tcp.c,
+	  dnstap/dnstap_collector.c, doc/ChangeLog, doc/NSD-VERIFY-MODS,
+	  doc/README, doc/RELNOTES: import NSD 4.6.1, ok florian@, thanks
+	  aoyama@ for checking autoconf C99 bits
+
+2022-07-02 16:06  deraadt
+
+	* usr.sbin/nsd/: configparser.y, nsd-checkconf.c, server.c,
+	  verify.c: Avoid c99 features, come on, this is supposed to be
+	  highly portable software ok florian
+
+2022-06-30 10:49  florian
+
+	* usr.sbin/nsd/: Makefile.in, config.h.in, configlexer.lex,
+	  configparser.y, configure, configure.ac, dbaccess.c, difffile.c,
+	  difffile.h, ipc.c, ixfrcreate.c, mini_event.c, mini_event.h,
+	  namedb.h, nsd-checkconf.8.in, nsd-checkconf.c,
+	  nsd-checkzone.8.in, nsd-control.8.in, nsd-control.c, nsd.8.in,
+	  nsd.c, nsd.conf.5.in, nsd.conf.sample.in, nsd.h, options.c,
+	  options.h, popen3.c, popen3.h, server.c, verify.c, verify.h,
+	  xfrd-tcp.c, xfrd.c, xfrd.h, doc/ChangeLog, doc/README,
+	  doc/RELNOTES: Update to nsd 4.6.0; OK sthen
+
+2022-06-30 08:21  florian
+
+	* usr.sbin/nsd/doc/README: Track doc/README, makes merging new
+	  releases easier.  OK sthen
+
+2022-05-13 15:48  florian
+
+	* usr.sbin/nsd/: Makefile.in, axfr.c, axfr.h, configlexer.lex,
+	  configparser.y, configure, configure.ac, dbaccess.c, dbcreate.c,
+	  difffile.c, ipc.c, ixfr.c, ixfr.h, ixfrcreate.c, ixfrcreate.h,
+	  namedb.h, nsd-checkconf.8.in, nsd-checkconf.c,
+	  nsd-checkzone.8.in, nsd-checkzone.c, nsd-control.8.in,
+	  nsd-control.c, nsd.8.in, nsd.c, nsd.conf.5.in,
+	  nsd.conf.sample.in, nsd.h, nsec3.c, options.c, options.h,
+	  query.c, query.h, rdata.c, remote.c, server.c, udb.c, zonec.c,
+	  zonec.h, doc/ChangeLog, doc/RELNOTES: Update to nsd 4.5.0 OK
+	  sthen
+
+2022-03-16 10:14  florian
+
+	* usr.sbin/nsd/: Makefile.in, configlexer.lex, configparser.y,
+	  configure, configure.ac, dbaccess.c, edns.c, lookup3.c,
+	  nsd-checkconf.8.in, nsd-checkconf.c, nsd-checkzone.8.in,
+	  nsd-control-setup.sh.in, nsd-control.8.in, nsd.8.in,
+	  nsd.conf.5.in, nsd.conf.sample.in, options.c, options.h,
+	  remote.c, rrl.h, server.c, udb.c, udb.h, util.c, xfrd-tcp.c,
+	  xfrd-tcp.h, xfrd.c, xfrd.h, doc/ChangeLog, doc/RELNOTES: Update
+	  to nsd 4.4.0
+
+	  tested by sthen and me OK sthen
+
+2021-12-22 18:33  florian
+
+	* usr.sbin/nsd/: configparser.y, configure, configure.ac,
+	  nsd-checkconf.8.in, nsd-checkzone.8.in, nsd-control.8.in,
+	  nsd.8.in, nsd.conf.5.in, doc/ChangeLog, doc/RELNOTES: Trivial
+	  update to 4.3.9.
+
+2021-10-30 15:42  benno
+
+	* usr.sbin/nsd/namedb.c: In certain configurations, nsd can be
+	  crashed remotely.
+
+	  Errata provided by Florian Obser (florian@).
+
+	  This is patches/7.0/common/001_nsd.patch.sig
+
+2021-10-24 12:16  florian
+
+	* usr.sbin/nsd/: nsd.conf.5.in, options.c: nsd 4.3.7 shipped with
+	  DNS cookies on and then flipped to a default of in 4.3.8. Since
+	  we shipped 4.3.7 in 7.0 we should not flip-flop between on and
+	  off all the time. Keep the default to on.  Suggested by & OK
+	  sthen
+
+2021-10-24 12:14  florian
+
+	* usr.sbin/nsd/: acx_nlnetlabs.m4, config.h.in, configlexer.lex,
+	  configparser.y, configure, configure.ac, dname.c,
+	  iterated_hash.c, namedb.c, nsd-checkconf.8.in,
+	  nsd-checkzone.8.in, nsd-control.8.in, nsd-control.c, nsd.8.in,
+	  nsd.conf.5.in, nsd.conf.sample.in, nsec3.c, options.c, options.h,
+	  query.c, radtree.c, server.c, tsig-openssl.c, xfrd-tcp.c, xfrd.c,
+	  doc/ChangeLog, doc/RELNOTES: Update to 4.3.8.  OK sthen
+
+2021-08-10 10:02  sthen
+
+	* usr.sbin/nsd/siphash.c: add file missed in previous
+
+2021-08-10 08:21  florian
+
+	* usr.sbin/nsd/: Makefile.in, acx_nlnetlabs.m4, config.h.in,
+	  configlexer.lex, configparser.y, configure, configure.ac,
+	  dbaccess.c, difffile.c, difffile.h, dns.c, dns.h, edns.c, edns.h,
+	  namedb.c, nsd-checkconf.8.in, nsd-checkconf.c,
+	  nsd-checkzone.8.in, nsd-control.8.in, nsd-control.c, nsd.8.in,
+	  nsd.c, nsd.conf.5.in, nsd.conf.sample.in, nsd.h, nsec3.c,
+	  options.c, options.h, query.c, query.h, rdata.c, rdata.h,
+	  remote.c, server.c, util.c, util.h, xfrd-tcp.c, xfrd-tcp.h,
+	  xfrd.c, zonec.c, zonec.h, zparser.y, dnstap/dnstap_collector.c,
+	  doc/ChangeLog, doc/RELNOTES: Update to nsd 4.3.7 OK sthen
+
+2021-06-30 11:50  deraadt
+
+	* usr.sbin/nsd/Makefile.bsd-wrapper: use @ to silently execute
+	  "exec make"
+
+2021-04-06 19:10  sthen
+
+	* usr.sbin/nsd/aclocal.m4: convert UTF-8 to plain ascii, spotted by
+	  florian
+
+2021-04-06 18:57  sthen
+
+	* usr.sbin/nsd/: aclocal.m4, doc/ChangeLog, doc/RELNOTES: merge NSD
+	  4.3.6
+
+2021-04-06 18:51  sthen
+
+	* usr.sbin/nsd/: config.h.in, configure, nsd-checkconf.8.in,
+	  nsd-checkzone.8.in, nsd-control.8.in, nsd.8.in, nsd.conf.5.in,
+	  doc/ChangeLog: merge NSD 4.3.6
+
+2021-04-06 18:50  sthen
+
+	* usr.sbin/nsd/: nsd.conf.5.in, config.h.in, aclocal.m4, configure,
+	  nsd-checkconf.8.in, nsd-checkzone.8.in, nsd-control.8.in,
+	  nsd.8.in, doc/ChangeLog, doc/RELNOTES: import NSD 4.3.6, ok
+	  florian
+
+2021-04-02 06:44  florian
+
+	* usr.sbin/nsd/configyyrename.h: configyyrename.h is no longer
+	  needed with the switch to flex -P c_.  This was also removed
+	  upstream.  OK sthen
+
+2021-04-01 09:56  sthen
+
+	* usr.sbin/nsd/: Makefile.in, acx_nlnetlabs.m4, axfr.c,
+	  config.h.in, configlexer.lex, configparser.y, configure,
+	  configure.ac, dbcreate.c, difffile.c, dname.c, edns.c, edns.h,
+	  namedb.h, nsd-checkconf.8.in, nsd-checkconf.c,
+	  nsd-checkzone.8.in, nsd-checkzone.c, nsd-control.8.in,
+	  nsd-control.c, nsd.8.in, nsd.c, nsd.conf.5.in,
+	  nsd.conf.sample.in, nsec3.c, options.c, options.h, query.c,
+	  remote.c, server.c, xfrd-tcp.c, xfrd.c, xfrd.h, zlexer.lex,
+	  zparser.y, dnstap/dnstap.c, dnstap/dnstap.h, dnstap/dnstap.m4,
+	  dnstap/dnstap_collector.c, dnstap/dnstap_collector.h: merge NSD
+	  4.3.6rc1
+
+2021-04-01 09:55  sthen
+
+	* usr.sbin/nsd/: Makefile.in, acx_nlnetlabs.m4, axfr.c,
+	  config.h.in, configparser.y, configure.ac, dns.h, edns.c,
+	  namedb.h, nsd-checkconf.c, nsec3.c, options.c, packet.h, query.h,
+	  remote.c, server.c, util.h, xfrd.c, zlexer.lex, configlexer.lex,
+	  configure, dbcreate.c, difffile.c, dname.c, dns.c, edns.h,
+	  nsd-checkconf.8.in, nsd-checkzone.8.in, nsd-checkzone.c,
+	  nsd-control.8.in, nsd-control.c, nsd.8.in, nsd.c, nsd.conf.5.in,
+	  nsd.conf.sample.in, options.h, query.c, xfrd-tcp.c, xfrd.h,
+	  zparser.y, dnstap/dnstap.c, dnstap/dnstap.h, dnstap/dnstap.m4,
+	  dnstap/dnstap_collector.c, dnstap/dnstap_collector.h,
+	  doc/ChangeLog, doc/RELNOTES: import NSD 4.3.6rc1, tested by me
+	  and florian@
+
+2021-01-27 05:06  deraadt
+
+	* usr.sbin/nsd/configyyrename.h: nsd contains two yacc parsers, but
+	  predates "yacc -b".  Instead a script renames the fields in one
+	  parser.  Three additional variables (yysslim, yyssp, yystacksize)
+	  need to be renamed also.  Yes it is worse than stepping out of
+	  bed on the wrong side into cat vomit.
+
+2020-12-10 17:22  florian
+
+	* usr.sbin/nsd/: config.h.in, configlexer.lex, configure,
+	  configure.ac, dname.c, dns.c, dns.h, nsd-checkconf.8.in,
+	  nsd-checkzone.8.in, nsd-control.8.in, nsd.8.in, nsd.c,
+	  nsd.conf.5.in, nsec3.c, options.h, packet.h, query.c, query.h,
+	  server.c, util.h, zparser.y, doc/ChangeLog, doc/RELNOTES: update
+	  to nsd 4.3.4
+
+2020-11-24 15:57  florian
+
+	* usr.sbin/nsd/Makefile.bsd-wrapper: Pid files? Where we're going,
+	  we don't need pid files.  OK sthen
+
+2020-10-13 14:06  florian
+
+	* usr.sbin/nsd/.cirrus.yml: More useless stuff snuck in.  OK sthen
+
+2020-10-13 10:06  sthen
+
+	* usr.sbin/nsd/: Makefile.in, acx_nlnetlabs.m4, config.h.in,
+	  configure, configure.ac, dbaccess.c, ipc.c, mini_event.h,
+	  nsd-checkconf.8.in, nsd-checkzone.8.in, nsd-control.8.in,
+	  nsd-control.c, nsd.8.in, nsd.c, nsd.conf.5.in,
+	  nsd.conf.sample.in, options.c, options.h, server.c,
+	  tsig-openssl.c, util.c, util.h, zonec.c, zonec.h, doc/ChangeLog,
+	  doc/RELNOTES: merge NSD 4.3.3
+
+2020-10-13 10:05  sthen
+
+	* usr.sbin/nsd/.cirrus.yml: Initial revision
+
+2020-10-13 10:05  sthen
+
+	* usr.sbin/nsd/: axfr.c, config.h.in, configparser.y, dbaccess.c,
+	  dbcreate.c, edns.c, namedb.c, nsd.conf.5.in, nsd.h, nsec3.c,
+	  region-allocator.c, server.c, udbradtree.c, util.h, xfrd.c,
+	  zonec.c, .cirrus.yml, Makefile.in, acx_nlnetlabs.m4, bitset.c,
+	  bitset.h, configlexer.lex, configure, configure.ac, difffile.c,
+	  ipc.c, mini_event.h, namedb.h, nsd-checkconf.8.in,
+	  nsd-checkconf.c, nsd-checkzone.8.in, nsd-control-setup.sh.in,
+	  nsd-control.8.in, nsd-control.c, nsd.8.in, nsd.c,
+	  nsd.conf.sample.in, options.c, options.h, packet.c, popen3.c,
+	  popen3.h, query.c, radtree.c, remote.c, tsig-openssl.c,
+	  tsig-openssl.h, tsig.c, udb.c, udb.h, util.c, xfrd-disk.c,
+	  xfrd-tcp.c, xfrd.h, zonec.h: import NSD 4.3.3, ok florian@
+
+2020-07-23 14:34  millert
+
+	* usr.sbin/nsd/: nsd.c, util.c: Fix strlcpy() usage.  The size
+	  argument should be the full size of the buffer, not the number of
+	  bytes to copy.  The strlcpy() return value should be checked to
+	  verify that truncation did not occur.  OK florian@
+
+2020-07-23 13:54  florian
+
+	* usr.sbin/nsd/: Makefile.in, config.h.in, configlexer.lex,
+	  configparser.y, configure, configure.ac, namedb.c, namedb.h,
+	  nsd-checkconf.8.in, nsd-checkconf.c, nsd-checkzone.8.in,
+	  nsd-control-setup.sh.in, nsd-control.8.in, nsd.8.in, nsd.c,
+	  nsd.conf.5.in, nsd.conf.sample.in, nsd.h, nsec3.c, options.c,
+	  options.h, query.c, server.c, util.c, util.h, xfrd-disk.c,
+	  xfrd.c, xfrd.h, doc/ChangeLog, doc/RELNOTES: Update to 4.3.2.
+
+2020-06-02 14:41  espie
+
+	* usr.sbin/nsd/Makefile.bsd-wrapper: remove useless redirections
+	  okay tb@, florian@
+
+2020-05-14 06:08  florian
+
+	* usr.sbin/nsd/: Makefile.in, axfr.c, bitset.c, bitset.h,
+	  config.h.in, configlexer.lex, configparser.y, configure,
+	  configure.ac, dbaccess.c, dbcreate.c, difffile.c, edns.c, ipc.c,
+	  namedb.c, namedb.h, nsd-checkconf.8.in, nsd-checkconf.c,
+	  nsd-checkzone.8.in, nsd-control-setup.sh.in, nsd-control.8.in,
+	  nsd-control.c, nsd.8.in, nsd.c, nsd.conf.5.in,
+	  nsd.conf.sample.in, nsd.h, nsec3.c, options.c, options.h,
+	  packet.c, popen3.c, popen3.h, query.c, radtree.c,
+	  region-allocator.c, remote.c, server.c, tsig.c, udb.c, udb.h,
+	  udbradtree.c, util.c, util.h, xfrd-tcp.c, xfrd.c, doc/ChangeLog,
+	  doc/RELNOTES: Update to 4.3.1 Testing & OK sthen
+
+2020-05-14 06:07  florian
+
+	* usr.sbin/nsd/doc/: ChangeLog, RELNOTES: We forgot to keep
+	  ChangeLog in sync in previous updates.  Bring in the mission
+	  changes up to 4.2.4.	Also bring in doc/RELNOTES.  Both changes
+	  ease the process of syncing with upstream.  OK sthen
+
+2019-12-21 21:40  espie
+
+	* usr.sbin/nsd/Makefile.bsd-wrapper: a few depend:-related thingies
+	  that were still in.
+
+	  okay millert@, tb@
+
+2019-12-18 11:01  sthen
+
+	* usr.sbin/nsd/doc/ChangeLog: add the changelog
+
+2019-12-18 10:58  sthen
+
+	* usr.sbin/nsd/: Makefile.in, config.h.in, configlexer.lex,
+	  configparser.y, configure, configure.ac, nsd-checkconf.8.in,
+	  nsd-checkconf.c, nsd-checkzone.8.in, nsd-control.8.in,
+	  nsd-control.c, nsd.8.in, nsd.c, nsd.conf.5.in,
+	  nsd.conf.sample.in, nsd.h, options.c, options.h, query.c,
+	  server.c, tsig.c, xfrd.c: merge NSD 4.2.4
+
+2019-12-18 10:56  sthen
+
+	* usr.sbin/nsd/: nsd-control.8.in, nsd.c, query.c, Makefile.in,
+	  config.h.in, configlexer.lex, configure, nsd-checkconf.8.in,
+	  nsd-control.c, nsd.8.in, nsd.conf.5.in, nsd.conf.sample.in,
+	  nsd.h, options.c, tsig.c, configure.ac, nsd-checkconf.c,
+	  nsd-checkzone.8.in, options.h, server.c, configparser.y, xfrd.c:
+	  import NSD 4.2.4, ok florian
+
+2019-09-17 16:19  sthen
+
+	* usr.sbin/nsd/: config.h.in, configlexer.lex, configparser.y,
+	  configure, configure.ac, dns.c, ipc.c, mini_event.c,
+	  nsd-checkconf.8.in, nsd-checkconf.c, nsd-checkzone.8.in,
+	  nsd-checkzone.c, nsd-control.8.in, nsd-control.c, nsd.8.in,
+	  nsd.c, nsd.conf.5.in, nsd.conf.sample.in, nsd.h, options.c,
+	  options.h, query.c, remote.c, server.c, tsig.c, util.c, util.h,
+	  xfrd-disk.c, xfrd-notify.c, xfrd-tcp.c, xfrd.c, zlexer.lex,
+	  zonec.c, zonec.h, zparser.y: merge 4.2.2
+
+2019-09-17 16:18  sthen
+
+	* usr.sbin/nsd/: axfr.c, config.h.in, configparser.y, dbaccess.c,
+	  dbcreate.c, difffile.h, dns.c, edns.c, edns.h, lookup3.c,
+	  namedb.c, nsd-checkzone.c, nsd.conf.5.in, nsd.h, nsec3.c,
+	  nsec3.h, query.h, rbtree.c, rbtree.h, region-allocator.c, rrl.c,
+	  server.c, udbradtree.c, udbzone.c, util.h, xfrd-disk.h,
+	  xfrd-tcp.h, xfrd.c, zlexer.lex, zonec.c, LICENSE, Makefile.in,
+	  acx_nlnetlabs.m4, answer.c, buffer.h, configlexer.lex, configure,
+	  configure.ac, difffile.c, dname.h, dns.h, install-sh, ipc.c,
+	  mini_event.c, mini_event.h, mkinstalldirs, namedb.h, netio.c,
+	  netio.h, nsd-checkconf.8.in, nsd-checkconf.c, nsd-checkzone.8.in,
+	  nsd-control-setup.sh.in, nsd-control.8.in, nsd-control.c,
+	  nsd-mem.c, nsd.8.in, nsd.c, nsd.conf.sample.in, options.c,
+	  options.h, packet.c, packet.h, query.c, radtree.c, radtree.h,
+	  rdata.c, region-allocator.h, remote.c, remote.h, rrl.h,
+	  systemd.m4, tsig-openssl.c, tsig.c, udb.c, udb.h, udbradtree.h,
+	  udbzone.h, util.c, xfr-inspect.c, xfrd-disk.c, xfrd-notify.c,
+	  xfrd-notify.h, xfrd-tcp.c, xfrd.h, zonec.h, zparser.y,
+	  dnstap/dnstap.c, dnstap/dnstap.h, dnstap/dnstap.proto,
+	  dnstap/dnstap_collector.c, dnstap/dnstap_collector.h: import nsd
+	  4.2.2, ok florian@
+
+2019-03-30 01:22  florian
+
+	* usr.sbin/nsd/query.c: Disable
+
+	  - Deny ANY with only one RR in response, by default.	Patch from
+	   Daisuke Higashi.  The deny-any statement in nsd.conf sets ANY
+	  queries over UDP to be further moved to TCP as well.	  Also no
+	  additional section processig for type ANY, reducing	 the
+	  response size.
+
+	  with an ifdef NOTYET. It is too close to release and we want to
+	  let this sit for a bit.  Pointed out / requested by sthen.
+
+2019-03-30 01:20  florian
+
+	* usr.sbin/nsd/: Makefile.in, config.h.in, configure, configure.ac,
+	  difffile.c, namedb.c, nsd-checkconf.8.in, nsd-checkzone.8.in,
+	  nsd-control-setup.sh.in, nsd-control.8.in, nsd-control.c,
+	  nsd.8.in, nsd.c, nsd.conf.5.in, options.h, packet.h, query.c,
+	  radtree.c, region-allocator.c, remote.c, remote.h, server.c,
+	  udb.h, dnstap/dnstap.c: Update to nsd 4.1.27 OK sthen
+
+2018-12-10 16:09  florian
+
+	* usr.sbin/nsd/: Makefile.in, config.h.in, configlexer.lex,
+	  configparser.y, configure, configure.ac, ipc.c,
+	  nsd-checkconf.8.in, nsd-checkconf.c, nsd-checkzone.8.in,
+	  nsd-control.8.in, nsd-control.c, nsd.8.in, nsd.c, nsd.conf.5.in,
+	  nsd.conf.sample.in, nsd.h, options.c, options.h, remote.c,
+	  server.c, xfrd.c, zparser.y, dnstap/dnstap.c, dnstap/dnstap.h,
+	  dnstap/dnstap.m4, dnstap/dnstap.proto, dnstap/dnstap_collector.c,
+	  dnstap/dnstap_collector.h, dnstap/dnstap_config.h.in: Update to
+	  4.1.26 OK sthen
+
+2018-09-29 17:17  florian
+
+	* usr.sbin/nsd/: config.h.in, configparser.y, configure,
+	  configure.ac, dbaccess.c, difffile.c, ipc.c, nsd-checkconf.8.in,
+	  nsd-checkconf.c, nsd-checkzone.8.in, nsd-checkzone.c,
+	  nsd-control.8.in, nsd-control.c, nsd-mem.c, nsd.8.in, nsd.c,
+	  nsd.conf.5.in, nsd.conf.sample.in, nsd.h, nsec3.c, nsec3.h,
+	  options.c, options.h, remote.c, server.c, util.c, util.h, xfrd.c,
+	  zparser.y: update to 4.1.25 OK sthen (on a slightly different
+	  configure script version)
+
+2018-09-29 17:14  florian
+
+	* usr.sbin/nsd/systemd.m4: I forgot to put this in with the 4.1.24
+	  update.  It is of course not relevant for us but introduces a
+	  diff when the configure script is regenerated on upgrades and
+	  this file is not arround.
+
+2018-08-16 17:56  florian
+
+	* usr.sbin/nsd/: config.h.in, configlexer.lex, configparser.y,
+	  configure, configure.ac, difffile.c, dns.c, dns.h,
+	  nsd-checkconf.8.in, nsd-checkconf.c, nsd-checkzone.8.in,
+	  nsd-control.8.in, nsd-control.c, nsd.8.in, nsd.conf.5.in,
+	  nsd.conf.sample.in, nsec3.c, nsec3.h, options.c, options.h,
+	  remote.c, remote.h, server.c, xfrd.c, zparser.y: update to 4.1.24
+	  OK sthen
+
+2018-07-30 08:57  florian
+
+	* usr.sbin/nsd/: configure, configure.ac, tsig.c: update to nsd
+	  4.1.23, from the release notes:
+	  ------------------------------------------------------------------------
+	  NSD versions 4.1.22 and before are vulnerable in comparing TSIG
+	  information and this can be used to discover a TSIG secret.
+
+	  NSD uses TSIG to protect zone transfers.  The TSIG code uses a
+	  secret key to protect the data.  The secret key is shared with
+	  both sides of the zone transfer connection.  The comparison code
+	  in NSD was not time insensitive, causing the potential for an
+	  attacker to use timing information to discover data about the key
+	  contents.
+
+	  NSD versions from 2.2.0 to 4.1.22 are vulnerable.  Upgrade to
+	  4.1.23 or newer to get the fix.
+
+	  It was reported by Ondrej Sury (ISC).
+	  ------------------------------------------------------------------------
+
+	  OK tb, sthen
+
+2018-06-14 06:23  florian
+
+	* usr.sbin/nsd/: config.h.in, configure: regen
+
+2018-06-14 06:23  florian
+
+	* usr.sbin/nsd/: configure.ac, nsd-checkconf.8.in,
+	  nsd-checkzone.8.in, nsd-control.8.in, nsd.8.in, nsd.conf.5.in,
+	  nsec3.c, remote.c, server.c: Update to nsd 4.1.22 The improved
+	  refuse-any option that showed up in upstream 4.1.22 had already
+	  been cherry picked in OpenBSD.  OK sthen
+
+2018-05-18 05:12  florian
+
+	* usr.sbin/nsd/: nsd.conf.5.in, options.c: Turn on minimal-reponses
+	  and refuse-any per default.  OK sthen
+
+2018-05-17 19:07  florian
+
+	* usr.sbin/nsd/: nsd.conf.5.in, query.c: From upcomming nsd 4.1.22:
+	  refuse-any sends truncation (+TC) in reply to ANY queries over
+	  UDP, and allows TCP queries like normal
+
+	  OK sthen
+
+2018-05-17 18:58  florian
+
+	* usr.sbin/nsd/: Makefile.in, config.h.in, configlexer.lex,
+	  configparser.y, configure, configure.ac, dbcreate.c, difffile.c,
+	  nsd-checkconf.8.in, nsd-checkconf.c, nsd-checkzone.8.in,
+	  nsd-control.8.in, nsd-mem.c, nsd.8.in, nsd.conf.5.in,
+	  nsd.conf.sample.in, options.c, options.h, query.c, query.h,
+	  server.c, udb.c, xfr-inspect.c, xfrd-disk.c, zonec.c: update to
+	  nsd 4.1.21 OK sthen
+
+2018-03-06 21:01  sthen
+
+	* usr.sbin/nsd/: Makefile.in, configure, configure.ac, difffile.c,
+	  ipc.c, namedb.c, nsd.c, nsd.h, nsec3.c, options.c, query.c,
+	  rrl.c, rrl.h, server.c, xfrd.c, zonec.c, zparser.y: update to NSD
+	  4.1.20, ok florian@
+
+	  - Fix memory leak in zone file read of unknown rr formatted RRs.
+	  - Fix memory leak when rehashing nsec3 after axfr or zonefile
+	  read, in the selectively allocated precompiled nsec3 hashes.
+
+2018-02-20 09:20  sthen
+
+	* usr.sbin/nsd/configure.ac: merge configure.ac from NSD 4.1.19,
+	  previously we had an updated generated configure file, but old
+	  configure.ac.
+
+2018-02-03 11:04  florian
+
+	* usr.sbin/nsd/: config.h.in, configure: regen
+
+2018-02-03 11:03  florian
+
+	* usr.sbin/nsd/: Makefile.in, axfr.c, difffile.c, lookup3.c,
+	  namedb.c, namedb.h, netio.c, nsd.c, nsec3.c, options.h, query.c,
+	  radtree.h, rbtree.h, region-allocator.c, remote.c, rrl.c, util.h,
+	  xfr-inspect.c, xfrd-notify.c, xfrd-notify.h, xfrd-tcp.c, xfrd.c,
+	  xfrd.h, zlexer.lex, zonec.c, zonec.h: Update nsd to 4.1.19.
+
+	  OK sthen@, "so far so good" millert@
+
+	  Obligatory commit from 33,000 ft.
+
+2018-01-13 20:40  millert
+
+	* usr.sbin/nsd/configure.ac: Add descriptions for HAVE_B64_NTOP and
+	  HAVE_B64_PTON so autoheader will run.  OK florian@
+
+2017-11-01 12:13  florian
+
+	* usr.sbin/nsd/server.c: Make ip-transparent option work by using
+	  SO_BINDANY.  OK jca, benno
+
+	  jca also points out that Delan Azabani (delan _AT_ azabani.com)
+	  wrote exactly the same diff in 2016. It was OK bluhm but
+	  apparently never commited.
+
+2017-08-11 12:52  florian
+
+	* usr.sbin/nsd/zparser.y: missed in previous
+
+2017-08-11 12:52  florian
+
+	* usr.sbin/nsd/configure: regen
+
+2017-08-11 12:51  florian
+
+	* usr.sbin/nsd/: Makefile.in, configure.ac, dns.c, dns.h, namedb.c,
+	  rdata.c, xfrd-tcp.c, zonec.c: update to 4.1.17 OK sthen
+
+2017-07-27 20:03  florian
+
+	* usr.sbin/nsd/config.h.in: Add prototypes for prototypes for
+	  __b64_pton and __b64_ntop; pointed out by clang.
+
+	  This is a local diff we have to carry so config.h.in is good a
+	  place as any and it's included everywhere.
+
+	  OK sthen
+
+2017-06-12 18:49  espie
+
+	* usr.sbin/nsd/Makefile.bsd-wrapper: destroy lint remnants.  okay
+	  millert@ deraadt@
+
+2017-04-15 09:16  florian
+
+	* usr.sbin/nsd/configure: regen
+
+2017-04-15 09:15  florian
+
+	* usr.sbin/nsd/: configlexer.lex, configparser.y, configure.ac,
+	  difffile.c, nsd-checkconf.c, nsd.conf.5.in, nsd.conf.sample.in,
+	  options.c, options.h, packet.c, packet.h, query.c, rdata.c,
+	  server.c, udb.c, xfrd.c, zonec.c: update to 4.1.16rc1 tests & OK
+	  sthen
+
+	  (if there are more changes coming for 4.1.16 release we will just
+	  commit them on top)
+
+2017-02-17 20:05  florian
+
+	* usr.sbin/nsd/configure: regen
+
+2017-02-17 20:04  florian
+
+	* usr.sbin/nsd/: axfr.c, configparser.y, configure.ac, dbaccess.c,
+	  dbcreate.c, difffile.c, difffile.h, ipc.c, mini_event.c,
+	  mini_event.h, namedb.c, namedb.h, nsd-checkconf.c,
+	  nsd-checkzone.c, nsd-control.c, nsd-mem.c, nsd.c, nsd.h, nsec3.c,
+	  options.c, options.h, query.c, radtree.c, radtree.h, rbtree.c,
+	  rbtree.h, remote.c, server.c, tsig.c, udbradtree.c, udbradtree.h,
+	  udbzone.h, util.c, xfrd-disk.c, xfrd-notify.c, xfrd-notify.h,
+	  xfrd-tcp.c, xfrd-tcp.h, xfrd.c, xfrd.h: Update to 4.1.15.  This
+	  contains a local patch to query.c (missed _t conversion) that has
+	  been submitted upstream.  OK sthen
+
+2017-01-17 06:21  florian
+
+	* usr.sbin/nsd/configure: regen
+
+2017-01-17 06:21  florian
+
+	* usr.sbin/nsd/: configlexer.lex, configure.ac, radtree.c,
+	  remote.c, xfrd-disk.c, xfrd-disk.h, xfrd-tcp.c, xfrd.c, xfrd.h:
+	  Update to nsd 4.1.14 OK sthen@
+
+2016-10-24 09:45  florian
+
+	* usr.sbin/nsd/: configlexer.lex, zlexer.lex: do not ignore
+	  -Wsign-compare; requested by deraadt@
+
+2016-10-24 09:45  florian
+
+	* usr.sbin/nsd/configure: regen
+
+2016-10-24 09:44  florian
+
+	* usr.sbin/nsd/: Makefile.in, axfr.c, configlexer.lex,
+	  configparser.y, configure.ac, difffile.c, dns.c, dns.h, edns.c,
+	  edns.h, namedb.c, namedb.h, nsd-checkconf.c, nsd-control.c,
+	  nsd-mem.c, nsd.conf.5.in, nsd.conf.sample.in, nsec3.c, options.c,
+	  options.h, query.c, query.h, remote.c, tsig-openssl.c, tsig.c,
+	  xfrd-disk.c, xfrd-tcp.c, xfrd.c, xfrd.h, zlexer.lex, zparser.y:
+	  Update to 4.1.13 Testing millert, brad and myself.  OK millert@
+
+2016-10-05 20:08  natano
+
+	* usr.sbin/nsd/Makefile.bsd-wrapper: Rewriting USER gets in the way
+	  of the de-escalation mechanism as it shadows the real user's
+	  identity.  ok deraadt
+
+2016-09-04 14:55  florian
+
+	* usr.sbin/nsd/configure: forgot to regen
+
+2016-09-03 13:09  florian
+
+	* usr.sbin/nsd/: configure.ac, edns.c: Update to 4.1.12
+	  -----------------------------------------------------------------
+	  BUG FIXES:	- Fix malformed edns query assertion failure,
+	  reported by	      Michal Kepien (NASK).
+	  -----------------------------------------------------------------
+
+	  Does not effect OpenBSD since we are not running configure with
+	  --enable-checking
+
+	  OK sthen@
+
+2016-08-31 07:32  florian
+
+	* usr.sbin/nsd/configure: regen
+
+2016-08-31 07:31  florian
+
+	* usr.sbin/nsd/: buffer.h, configlexer.lex, configparser.y,
+	  configure.ac, ipc.c, namedb.c, namedb.h, nsd-checkconf.c,
+	  nsd.conf.5.in, nsd.conf.sample.in, nsec3.c, options.c, options.h,
+	  query.c, server.c, util.h, xfrd-disk.c, xfrd-disk.h, xfrd.c,
+	  zonec.c: update to 4.1.11 "Working fine here." millert@ OK dlg,
+	  sthen
+
+2016-06-24 08:34  florian
+
+	* usr.sbin/nsd/: config.h.in, configure: regen
+
+2016-06-24 08:34  florian
+
+	* usr.sbin/nsd/: Makefile.in, acx_nlnetlabs.m4, answer.c, axfr.c,
+	  configlexer.lex, configparser.y, configure.ac, dbaccess.c,
+	  dbcreate.c, difffile.c, dns.c, dns.h, namedb.c, namedb.h,
+	  nsd-checkconf.8.in, nsd-checkconf.c, nsd-checkzone.8.in,
+	  nsd-control.8.in, nsd.8.in, nsd.c, nsd.conf.5.in,
+	  nsd.conf.sample.in, nsd.h, nsec3.c, options.c, options.h,
+	  query.c, rrl.c, server.c, tsig-openssl.c, udb.h, udbzone.c,
+	  udbzone.h, util.c, util.h, xfrd-tcp.c, xfrd.c, zparser.y: Update
+	  to 4.1.10 Testing by millert@, sthen@ and me.  came up with the
+	  same diff & OK sthen@
+
+2015-12-17 13:37  sthen
+
+	* usr.sbin/nsd/configure: regen NSD's autoconf script, forgotten
+	  with the update - noticed by Brad
+
+2015-12-12 16:06  sthen
+
+	* usr.sbin/nsd/nsd.c: zap surplus blank line
+
+2015-12-11 12:30  sthen
+
+	* usr.sbin/nsd/Makefile.bsd-wrapper: Disable database file by
+	  default; we already have it in our default nsd.conf but this also
+	  disables it for users who don't have that line. (It can be re-
+	  enabled by explicit config in nsd.conf but it is suspected that
+	  it has issues and performance seems totally OK with zone files
+	  even for quite large setups).
+
+	  ok florian@
+
+2015-12-11 12:28  sthen
+
+	* usr.sbin/nsd/: Makefile.in, acx_nlnetlabs.m4, config.h.in,
+	  configlexer.lex, configparser.y, configure.ac, netio.c, netio.h,
+	  nsd-checkconf.8.in, nsd-checkconf.c, nsd-checkzone.8.in,
+	  nsd-control.8.in, nsd.8.in, nsd.c, nsd.conf.5.in,
+	  nsd.conf.sample.in, options.c, options.h, query.c,
+	  region-allocator.c, server.c, tsig-openssl.c, zonec.c: update to
+	  NSD 4.1.7, ok florian@
+
+2015-12-09 00:40  sthen
+
+	* usr.sbin/nsd/nsd.conf.5.in: doc cleanup from nsd 4.1.7rc1
+
+2015-12-09 00:36  sthen
+
+	* usr.sbin/nsd/: dbaccess.c, dname.h, dns.c, lookup3.c, options.h,
+	  packet.h, query.c, rbtree.c, region-allocator.h, rrl.c,
+	  udbradtree.h, util.h, xfrd-tcp.c, zonec.c, zparser.y: comment
+	  typo fixes, from nsd 4.1.7rc1
+
+2015-11-21 21:12  florian
+
+	* usr.sbin/nsd/: nsd.c, server.c: pledge for nsd.
+
+	  The main process handles zone transfers (inet, dns), writing and
+	  creating of zone files (wpath, cpath) and starting of child
+	  processes (proc).
+
+	  Child processes answer queries from the internet.
+
+	  "Looks good" to deraadt@
+
+2015-11-05 22:58  sthen
+
+	* usr.sbin/nsd/: LICENSE, README, ac_pkg_swig.m4, aclocal.m4,
+	  acx_python.m4, ax_pthread.m4, config.guess, config.sub,
+	  install-sh, ltmain.sh, dnstap/dnstap.c, dnstap/dnstap.h,
+	  dnstap/dnstap.m4, dnstap/dnstap.proto, dnstap/dnstap_config.h.in,
+	  doc/CREDITS, doc/Changelog, doc/FEATURES, doc/LICENSE,
+	  doc/README, doc/README.DNS64, doc/README.svn, doc/README.tests,
+	  doc/TODO, doc/control_proto_spec.txt, doc/example.conf.in,
+	  doc/ietf67-design-02.odp, doc/ietf67-design-02.pdf,
+	  doc/libunbound.3.in, doc/requirements.txt,
+	  doc/unbound-anchor.8.in, doc/unbound-checkconf.8.in,
+	  doc/unbound-control.8.in, doc/unbound-host.1.in,
+	  doc/unbound.8.in, doc/unbound.conf.5.in, doc/unbound.doxygen,
+	  util/alloc.c, util/alloc.h, util/config_file.c,
+	  util/config_file.h, util/configlexer.lex, util/configparser.y,
+	  util/configyyrename.h, util/fptr_wlist.c, util/fptr_wlist.h,
+	  util/iana_ports.inc, util/locks.c, util/locks.h, util/log.c,
+	  util/log.h, util/mini_event.c, util/mini_event.h, util/module.c,
+	  util/module.h, util/net_help.c, util/net_help.h, util/netevent.c,
+	  util/netevent.h, util/random.c, util/random.h, util/rbtree.c,
+	  util/rbtree.h, util/regional.c, util/regional.h, util/rtt.c,
+	  util/rtt.h, util/timehist.c, util/timehist.h, util/tube.c,
+	  util/tube.h, util/winsock_event.c, util/winsock_event.h: undo
+	  botched import to wrong dir, spotted by sobrado@
+
+2015-11-05 21:27  sthen
+
+	* usr.sbin/nsd/: aclocal.m4, ac_pkg_swig.m4, config.sub, ltmain.sh,
+	  README, acx_python.m4, ax_pthread.m4, config.guess,
+	  doc/Changelog, doc/LICENSE, doc/TODO, doc/control_proto_spec.txt,
+	  doc/unbound-checkconf.8.in, doc/unbound.doxygen,
+	  doc/ietf67-design-02.pdf, doc/CREDITS, doc/FEATURES, doc/README,
+	  doc/README.DNS64, doc/README.svn, doc/README.tests,
+	  doc/example.conf.in, doc/ietf67-design-02.odp,
+	  doc/libunbound.3.in, doc/requirements.txt,
+	  doc/unbound-anchor.8.in, doc/unbound-control.8.in,
+	  doc/unbound-host.1.in, doc/unbound.8.in, doc/unbound.conf.5.in,
+	  util/alloc.c, util/alloc.h, util/config_file.c,
+	  util/config_file.h, util/configlexer.lex, util/configparser.y,
+	  util/configyyrename.h, util/fptr_wlist.c, util/fptr_wlist.h,
+	  util/iana_ports.inc, util/locks.c, util/locks.h, util/log.c,
+	  util/log.h, util/mini_event.c, util/mini_event.h, util/module.c,
+	  util/module.h, util/net_help.c, util/net_help.h, util/netevent.c,
+	  util/netevent.h, util/random.c, util/random.h, util/rbtree.c,
+	  util/rbtree.h, util/regional.c, util/regional.h, util/rtt.c,
+	  util/rtt.h, util/timehist.c, util/timehist.h, util/tube.c,
+	  util/tube.h, util/winsock_event.c, util/winsock_event.h,
+	  dnstap/dnstap.c, dnstap/dnstap.h, dnstap/dnstap.m4,
+	  dnstap/dnstap.proto, dnstap/dnstap_config.h.in: Initial revision
+
+2015-11-05 21:27  sthen
+
+	* usr.sbin/nsd/: aclocal.m4, LICENSE, Makefile.in, ac_pkg_swig.m4,
+	  config.sub, configure.ac, ltmain.sh, README, acx_python.m4,
+	  ax_pthread.m4, config.guess, config.h.in, configure, install-sh,
+	  doc/Changelog, doc/LICENSE, doc/TODO, doc/control_proto_spec.txt,
+	  doc/unbound-checkconf.8.in, doc/unbound.doxygen,
+	  doc/ietf67-design-02.pdf, doc/CREDITS, doc/FEATURES, doc/README,
+	  doc/README.DNS64, doc/README.svn, doc/README.tests,
+	  doc/example.conf.in, doc/ietf67-design-02.odp,
+	  doc/libunbound.3.in, doc/requirements.txt,
+	  doc/unbound-anchor.8.in, doc/unbound-control.8.in,
+	  doc/unbound-host.1.in, doc/unbound.8.in, doc/unbound.conf.5.in,
+	  util/alloc.c, util/alloc.h, util/config_file.c,
+	  util/config_file.h, util/configlexer.lex, util/configparser.y,
+	  util/configyyrename.h, util/fptr_wlist.c, util/fptr_wlist.h,
+	  util/iana_ports.inc, util/locks.c, util/locks.h, util/log.c,
+	  util/log.h, util/mini_event.c, util/mini_event.h, util/module.c,
+	  util/module.h, util/net_help.c, util/net_help.h, util/netevent.c,
+	  util/netevent.h, util/random.c, util/random.h, util/rbtree.c,
+	  util/rbtree.h, util/regional.c, util/regional.h, util/rtt.c,
+	  util/rtt.h, util/timehist.c, util/timehist.h, util/tube.c,
+	  util/tube.h, util/winsock_event.c, util/winsock_event.h,
+	  dnstap/dnstap.c, dnstap/dnstap.h, dnstap/dnstap.m4,
+	  dnstap/dnstap.proto, dnstap/dnstap_config.h.in: update to unbound
+	  1.5.6, ok millert@ florian@
+
+2015-11-05 21:21  sthen
+
+	* usr.sbin/nsd/: axfr.c, config.h.in, configparser.y, configure,
+	  configure.ac, dns.c, dns.h, mkinstalldirs, nsd-checkconf.8.in,
+	  nsd-checkconf.c, nsd-control.8.in, nsd.8.in, nsd.c,
+	  nsd.conf.5.in, options.c, query.c, remote.c, server.c, util.c,
+	  xfrd-tcp.c, zonec.c, zparser.y: merge
+
+2015-11-05 21:21  sthen
+
+	* usr.sbin/nsd/: axfr.c, configure.ac, nsd.8.in, nsd.h, query.c,
+	  server.c, configure, nsd-checkconf.c, nsd.c, nsd.conf.5.in,
+	  nsd.conf.sample.in, remote.c, xfrd-notify.c, xfrd-tcp.c,
+	  acx_nlnetlabs.m4, config.h.in, configlexer.lex, configparser.y,
+	  dns.c, dns.h, nsd-checkconf.8.in, nsd-checkzone.8.in,
+	  nsd-control.8.in, options.c, options.h, query.h, util.c,
+	  xfrd-notify.h, zonec.c, zparser.y: update to NSD 4.1.6, ok
+	  millert@ florian@
+
+2015-10-27 07:58  doug
+
+	* usr.sbin/nsd/: nsd-control.c, remote.c: Fix nsd and unbound's
+	  error checking with SSL_CTX_set_options().
+
+	  LibreSSL, BoringSSL and OpenSSL have all been redefining SSL_OP_*
+	  flags to be 0 when support is removed.  This breaks the error
+	  checking that nsd and unbound were doing.  It should check
+	  against the flag value itself to allow for 0.
+
+	  input deraadt@, jsing@ tweak + ok miod@, guenther@
+
+2015-10-15 21:22  sthen
+
+	* usr.sbin/nsd/Makefile.bsd-wrapper: don't allow NSD to pick up
+	  libevent from /usr/local if the libevent2 package is installed.
+
+2015-09-10 15:49  sthen
+
+	* usr.sbin/nsd/configure: regen configure, reported by deraadt@
+
+2015-09-10 14:12  sthen
+
+	* usr.sbin/nsd/: configparser.y, configure.ac, options.c, rdata.c,
+	  zonec.c: Fix handling of compat/b64_{ntop,pton} by using
+	  __-prefixed versions directly, similar to what ssh does.
+	  Otherwise they need resolv.h including, which causes problems on
+	  OS with newer resolv.h/nameser.h headers which cause conflicts
+	  with NSD's T_xxx resource record #defines. autoconf bits adapted
+	  from tmux portable.  ok florian@
+
+2015-07-17 17:36  sthen
+
+	* usr.sbin/nsd/: Makefile.in, axfr.c, config.h.in, configparser.y,
+	  configure, configure.ac, difffile.c, dname.c, namedb.c, namedb.h,
+	  nsd-checkconf.8.in, nsd-checkconf.c, nsd-control.8.in, nsd.c,
+	  nsd.conf.5.in, query.c, rdata.c, region-allocator.c, remote.c,
+	  rrl.c, server.c, udb.c, util.c, util.h, zonec.c, zparser.y: merge
+	  conflicts
+
+2015-07-17 17:36  sthen
+
+	* usr.sbin/nsd/: Makefile.in, acx_nlnetlabs.m4, axfr.c,
+	  config.h.in, configparser.y, configure, configure.ac,
+	  configyyrename.h, dbaccess.c, difffile.c, dname.c, dname.h,
+	  namedb.c, namedb.h, nsd-checkconf.8.in, nsd-checkconf.c,
+	  nsd-checkzone.8.in, nsd-control-setup.sh.in, nsd-control.8.in,
+	  nsd-control.c, nsd.8.in, nsd.c, nsd.conf.5.in, nsd.h, packet.c,
+	  packet.h, query.c, radtree.c, rdata.c, region-allocator.c,
+	  region-allocator.h, remote.c, rrl.c, server.c, tsig-openssl.c,
+	  tsig.h, udb.c, util.c, util.h, xfrd-tcp.c, zonec.c, zparser.y:
+	  update to NSD 4.1.3, ok florian@, also tested by brad
+
+2015-02-10 22:06  brad
+
+	* usr.sbin/nsd/xfrd-tcp.c: Merge in a commit from upstream..
+
+	  - Fix tcp waiting list for zone transfers where the bind and
+	  connect   calls fail.
+
+	  ok sthen@
+
+2015-02-03 11:05  brad
+
+	* usr.sbin/nsd/nsd.8.in: merge back a part of rev 1.15
+
+2015-02-03 10:40  brad
+
+	* usr.sbin/nsd/: axfr.c, config.h.in, configparser.y, configure,
+	  configure.ac, difffile.c, dname.c, namedb.h, nsd-checkconf.8.in,
+	  nsd-checkconf.c, nsd-control.8.in, nsd.8.in, nsd.c,
+	  nsd.conf.5.in, query.c, remote.c, server.c, util.c, xfrd-disk.c,
+	  xfrd-tcp.c, xfrd.c, xfrd.h, zonec.c: merge conflicts
+
+2015-02-03 10:24  brad
+
+	* usr.sbin/nsd/: axfr.c, nsd.8.in, configure.ac, nsd.h, query.c,
+	  server.c, xfrd-disk.c, xfrd-tcp.c, nsd-control.c, nsd.c,
+	  nsd.conf.5.in, nsd.conf.sample.in, remote.c, tsig.c, xfrd.h,
+	  nsd-checkconf.c, xfrd.c, configparser.y, configure, dns.c,
+	  options.h, dbaccess.c, difffile.c, difffile.h, dname.c, dns.h,
+	  ipc.h, namedb.c, namedb.h, nsd-control.8.in, zlexer.lex,
+	  config.h.in, ipc.c, rdata.c, configlexer.lex, nsd-checkconf.8.in,
+	  options.c, udb.c, zonec.c, zparser.y, nsd-checkzone.8.in, util.c:
+	  update to NSD 4.1.1, ok sthen@
+
+2015-01-26 12:06  brad
+
+	* usr.sbin/nsd/query.c: Merge in a commit from upstream..
+
+	  - Synthesize CNAMEs with same TTL as DNAME.
+
+	  ok sthen@
+
+2015-01-16 01:10  brad
+
+	* usr.sbin/nsd/udb.c: Merge in a commit from upstream..
+
+	  - Fix bug#637: fix that nsd.db grows limitlessly, an off by one
+	  on one megabyte free chunks, created during AXFRs of large zones,
+	    that caused the one megabyte chunk to be leaked.
+
+	  ok sthen@
+
+2015-01-12 14:36  millert
+
+	* usr.sbin/nsd/: dns.c, nsd.c, rdata.c, remote.c, tsig.c, util.c,
+	  zlexer.lex, zonec.c: Use proper casts for ctype functions.  This
+	  is already fixed in nsd trunk.  OK doug@
+
+2014-12-25 20:13  otto
+
+	* usr.sbin/nsd/xfrd-tcp.c: subtraction of two void * is not well
+	  defined, plus two void * can be apart more than an int can hold;
+	  ok krw@ deraadt@ and tedu@ (by implication)
+
+2014-12-18 23:26  brad
+
+	* usr.sbin/nsd/: difffile.c, dns.c, dns.h, namedb.c, namedb.h,
+	  nsd-control.8.in, query.c, remote.c, server.c, xfrd-disk.c,
+	  xfrd.c, xfrd.h, zparser.y: Merge in some commits from upstream..
+
+	  - Fix that failure to add tcp to tcp base does not leak the
+	  socket.  - Fixes for wildcard addition and deletion, speedup for
+	  some cases.  - Fix that queries for noname CH TXT are REFUSED
+	  instead of nodata.  - Fix #616: retry xfer for zones with no
+	  content after command.  - Fix that expired zones stay expired
+	  after a server restart.  - RFC 7344: CDS and CDNSKEY (read in).
+
+	  ok sthen@
+
+2014-11-30 05:54  brad
+
+	* usr.sbin/nsd/Makefile.bsd-wrapper: Remove passing an override of
+	  INSTALL_PROGRAM to the autoconf script. It doesn't seem to serve
+	  any purpose.
+
+	  ok sthen@
+
+2014-11-29 00:09  millert
+
+	* usr.sbin/nsd/nsd.8.in: The startup script is /etc/rc.d/nsd
+	  OpenBSD doesn't need a /dev/log socket in the chroot for syslog
+	  to work.  OK deraadt@ miod@ sthen@
+
+2014-11-18 20:54  krw
+
+	* usr.sbin/nsd/: remote.c, server.c: Nuke more obvious #include
+	  duplications.
+
+	  ok deraadt@ millert@ tedu@
+
+2014-09-16 17:09  brad
+
+	* usr.sbin/nsd/Makefile.bsd-wrapper: Add nsd-checkzone.
+
+2014-09-16 17:01  brad
+
+	* usr.sbin/nsd/: Makefile.in, config.h.in, configparser.y,
+	  configure, configure.ac, dname.c, dns.c, lookup3.c,
+	  nsd-checkconf.8.in, nsd-checkconf.c, nsd.8.in, nsd.c,
+	  nsd.conf.5.in, nsec3.c, rrl.c, server.c, util.c, util.h,
+	  xfrd-disk.c, xfrd-tcp.c, xfrd.c, zparser.y: merge conflicts
+
+2014-09-16 16:54  brad
+
+	* usr.sbin/nsd/: nsd-checkzone.c, nsd-checkzone.8.in: Initial
+	  revision
+
+2014-09-16 16:53  brad
+
+	* usr.sbin/nsd/: nsec3.h, rrl.c, nsd.8.in, nsd.h, nsec3.c,
+	  packet.h, server.c, configure.ac, nsd.c, nsd.conf.sample.in,
+	  remote.c, udb.h, xfrd-disk.c, xfrd-tcp.c, Makefile.in,
+	  nsd-checkconf.c, nsd.conf.5.in, xfrd.c, xfrd.h, configure,
+	  options.h, packet.c, configparser.y, difffile.c, dns.c, namedb.h,
+	  zlexer.lex, config.h.in, dbaccess.c, dbcreate.c, dname.c, ipc.c,
+	  lookup3.c, nsd-checkzone.c, nsd-control.8.in, nsd-mem.c, util.h,
+	  configlexer.lex, udb.c, zparser.y, nsd-checkconf.8.in,
+	  nsd-checkzone.8.in, options.c, util.c: update to NSD 4.1.0, ok
+	  sthen@
+
+2014-05-04 12:24  kettenis
+
+	* usr.sbin/nsd/server.c: Fix bogus error check; spotted by clang.
+	  Submitted upstream by brad@ (and subsequently committed there).
+
+	  ok jca@, mikeb@, brad@
+
+2014-03-14 16:03  sthen
+
+	* usr.sbin/nsd/: configure, configure.ac, nsd-checkconf.8.in,
+	  nsd.8.in, nsd.conf.5.in, server.c, xfrd.c: merge conflicts
+
+2014-03-14 16:01  sthen
+
+	* usr.sbin/nsd/: configure.ac, nsd.8.in, server.c, udb.h,
+	  nsd.conf.5.in, xfrd.c, configure, dbaccess.c, nsd-control.8.in,
+	  udb.c, nsd-checkconf.8.in: Update to NSD 4.0.3, main change is to
+	  improve/fix nsd.db database corruption checks and avoid some
+	  causes of corruption. More details at
+	  http://article.gmane.org/gmane.network.dns.nsd.general/1687
+
+2014-03-13 02:09  brad
+
+	* usr.sbin/nsd/: axfr.c, config.h.in, configure, configure.ac,
+	  nsd-checkconf.8.in, nsd.8.in, nsd.conf.5.in, query.c, server.c,
+	  zonec.c: merge conflicts
+
+2014-03-13 02:00  brad
+
+	* usr.sbin/nsd/: LICENSE, axfr.c, nsd.8.in, remote.h, udbzone.h,
+	  configure.ac, query.c, server.c, nsd-control.c, nsd.conf.5.in,
+	  remote.c, xfrd.h, configure, difffile.c, mini_event.h, namedb.h,
+	  config.h.in, dbaccess.c, dbcreate.c, mini_event.c, namedb.c,
+	  nsd-control.8.in, radtree.c, xfrd-notify.h, lookup3.h,
+	  nsd-control-setup.sh.in, udbzone.c, nsd-checkconf.8.in, udb.c,
+	  zonec.c: update to NSD 4.0.2, ok sthen@
+
+2014-02-04 03:15  brad
+
+	* usr.sbin/nsd/Makefile.in: re-add this local install target change
+
+2014-02-04 03:07  brad
+
+	* usr.sbin/nsd/: Makefile.in, axfr.c, config.h.in, configparser.y,
+	  configure, configure.ac, dns.c, dns.h, nsd-checkconf.8.in,
+	  nsd.8.in, nsd.c, nsd.conf.5.in, rdata.c, server.c, util.c,
+	  xfrd-disk.c, xfrd-tcp.c, xfrd.c, zonec.c, zonec.h, zparser.y:
+	  merge conflicts
+
+2014-02-04 01:54  brad
+
+	* usr.sbin/nsd/: axfr.c, nsd.8.in, packet.h, server.c,
+	  configure.ac, nsd.c, remote.c, xfrd-disk.c, xfrd-tcp.c, zonec.h,
+	  Makefile.in, answer.c, nsd.conf.5.in, nsd.conf.sample.in, xfrd.c,
+	  configure, packet.c, configparser.y, difffile.c, dns.c, namedb.h,
+	  options.h, config.h.in, dbaccess.c, dbcreate.c, difffile.h,
+	  dns.h, nsd-control.8.in, nsd-mem.c, rdata.c, zparser.y,
+	  configlexer.lex, nsd-checkconf.8.in, options.c, util.c, zonec.c:
+	  update to NSD 4.0.1, ok sthen@
+
+2013-11-30 20:39  brad
+
+	* usr.sbin/nsd/xfrd.c: Fix bug#534: IXFR query loop over UDP for
+	  zones that are unchanged.
+
+	  "After upgrading a secondary NS to NSD 4.0.0, the master server
+	  came under IXFR query flood from the slave."
+
+	  ok sthen@
+
+2013-11-26 13:04  sthen
+
+	* usr.sbin/nsd/: nsd-notify.8.in, nsd-notify.c, nsd-patch.8.in,
+	  nsd-patch.c, nsd-xfer.8.in, nsd-xfer.c, nsdc.8.in, nsdc.sh.in,
+	  zonec.8.in: remove old files
+
+2013-11-26 12:53  sthen
+
+	* usr.sbin/nsd/: Makefile.bsd-wrapper, Makefile.in, axfr.c,
+	  config.h.in, configparser.y, configure, configure.ac, dname.c,
+	  dns.c, dns.h, lookup3.c, mkinstalldirs, nsd-checkconf.8.in,
+	  nsd-checkconf.c, nsd.8.in, nsd.c, nsd.conf.5.in, nsec3.c,
+	  query.c, rdata.c, region-allocator.c, rrl.c, server.c, util.c,
+	  util.h, xfrd-disk.c, xfrd-tcp.c, xfrd.c, zonec.c, zonec.h,
+	  zparser.y: merge conflicts
+
+2013-11-26 12:50  sthen
+
+	* usr.sbin/nsd/: remote.h, udbzone.h, remote.c, udb.h,
+	  nsd-control.c, mini_event.h, radtree.h, radtree.c, mini_event.c,
+	  nsd-control.8.in, nsd-mem.c, udbradtree.c,
+	  nsd-control-setup.sh.in, udbradtree.h, udbzone.c, udb.c: Initial
+	  revision
+
+2013-11-26 12:50  sthen
+
+	* usr.sbin/nsd/: LICENSE, axfr.c, iterated_hash.h, nsd.8.in,
+	  nsec3.h, remote.h, rrl.c, tsig-openssl.h, udbzone.h, packet.h,
+	  server.c, answer.h, buffer.h, nsd.h, query.c, configure.ac,
+	  nsec3.c, xfrd-disk.c, xfrd-tcp.c, zonec.h, axfr.h, netio.c,
+	  nsd.c, nsd.conf.5.in, nsd.conf.sample.in, region-allocator.h,
+	  remote.c, tsig-openssl.c, tsig.c, tsig.h, udb.h, xfrd-tcp.h,
+	  Makefile.in, answer.c, nsd-checkconf.c, nsd-control.c, rdata.h,
+	  xfrd-notify.c, xfrd.c, xfrd.h, configure, packet.c,
+	  configparser.y, configyyrename.h, dns.c, mini_event.h, netio.h,
+	  options.h, radtree.h, rrl.h, buffer.c, difffile.c, difffile.h,
+	  dname.h, namedb.h, radtree.c, xfrd-disk.h, xfrd-notify.h,
+	  zlexer.lex, dname.c, dns.h, edns.c, edns.h, ipc.h, mini_event.c,
+	  namedb.c, nsd-control.8.in, nsd-mem.c, rbtree.h, dbaccess.c,
+	  dbcreate.c, util.h, config.h.in, lookup3.c, region-allocator.c,
+	  acx_nlnetlabs.m4, ipc.c, rdata.c, udbradtree.c,
+	  nsd-control-setup.sh.in, udbradtree.h, udbzone.c, zparser.y,
+	  zonec.c, udb.c, configlexer.lex, iterated_hash.c,
+	  nsd-checkconf.8.in, options.c, query.h, rbtree.c, util.c: import
+	  NSD 4.0.0, tests from Dorian Büttner, Patrik Lundin, requested
+	  by brad@
+
+2013-09-04 12:24  sthen
+
+	* usr.sbin/nsd/: lookup3.c, nsd.c, nsec3.c, rrl.c, server.c,
+	  xfrd-disk.c, xfrd.c: time_t and random fixes from NSD upstream,
+	  ok deraadt@
+
+2013-09-03 09:26  sthen
+
+	* usr.sbin/nsd/: Makefile.in, config.h.in, configparser.y,
+	  configure, configure.ac, dname.c, dns.c, dns.h, lookup3.c,
+	  nsd-checkconf.8.in, nsd-checkconf.c, nsd-notify.8.in,
+	  nsd-patch.8.in, nsd-xfer.8.in, nsd.8.in, nsd.c, nsd.conf.5.in,
+	  nsdc.8.in, query.c, rdata.c, region-allocator.c, server.c,
+	  util.c, zonec.8.in, zonec.c, zonec.h, zparser.y: merge NSD 3.2.16
+
+2013-09-03 09:21  sthen
+
+	* usr.sbin/nsd/: dname.c, namedb.c, nsd-checkconf.c, nsd-xfer.8.in,
+	  nsd.conf.sample.in, options.h, rdata.c, region-allocator.c,
+	  rrl.c, xfrd.c, configure, configure.ac, dns.c, query.c, server.c,
+	  Makefile.in, netio.c, acx_nlnetlabs.m4, config.h.in,
+	  configlexer.lex, configparser.y, difffile.c, dns.h, ipc.c,
+	  lookup3.c, netio.h, nsd-checkconf.8.in, nsd-notify.8.in,
+	  nsd-patch.8.in, nsd.8.in, nsd.c, nsd.conf.5.in, util.c,
+	  zonec.8.in, zonec.c, zparser.y, nsd.h, nsdc.8.in, options.c,
+	  rrl.h, xfrd-disk.c, xfrd.h, zonec.h: update to NSD 3.2.16, ok
+	  deraadt@ brad@
+
+2013-03-29 12:13  sthen
+
+	* usr.sbin/nsd/Makefile.bsd-wrapper: Enable the response rate
+	  limiting code in NSD in the default build, see
+	  http://www.nlnetlabs.nl/blog/2012/10/11/nsd-ratelimit/ for more
+	  information.
+
+	  camield, phessler and deraadt agree this is a sane default.
+
+2013-02-18 21:57  brad
+
+	* usr.sbin/nsd/lookup3.c: Fix determination of endianness with *BSD
+	  OS's.
+
+	  ok sthen@
+
+2013-02-18 10:18  sthen
+
+	* usr.sbin/nsd/: Makefile.in, axfr.c, config.h.in, configparser.y,
+	  configure, configure.ac, dns.c, dns.h, nsd-checkconf.8.in,
+	  nsd-checkconf.c, nsd-notify.8.in, nsd-patch.8.in, nsd-xfer.8.in,
+	  nsd-xfer.c, nsd.8.in, nsd.c, nsd.conf.5.in, nsdc.8.in, nsec3.c,
+	  query.c, rdata.c, region-allocator.c, server.c, util.c,
+	  zonec.8.in, zonec.c, zonec.h, zparser.y: resolve conflicts
+
+2013-02-18 10:17  sthen
+
+	* usr.sbin/nsd/: rrl.c, lookup3.c, lookup3.h, rrl.h: Initial
+	  revision
+
+2013-02-18 10:17  sthen
+
+	* usr.sbin/nsd/: nsd-checkconf.c, nsd-xfer.8.in,
+	  nsd.conf.sample.in, nsec3.h, rdata.c, tsig.c, axfr.c, dns.c,
+	  options.h, query.c, query.h, region-allocator.c, rrl.c, server.c,
+	  tsig.h, xfrd.c, Makefile.in, configure, configure.ac, nsec3.c,
+	  config.h.in, configlexer.lex, configparser.y, dbcreate.c,
+	  difffile.c, dns.h, ipc.c, lookup3.c, lookup3.h,
+	  nsd-checkconf.8.in, nsd-notify.8.in, nsd-patch.8.in, nsd.8.in,
+	  nsd.c, nsd.conf.5.in, packet.c, tsig-openssl.c, util.c,
+	  zonec.8.in, zonec.c, zonec.h, zparser.y, nsd-xfer.c, nsd.h,
+	  nsdc.8.in, options.c, rrl.h: Update to NSD 3.2.15, ok brad@
+	  phessler@ deraadt@ also tested by okan@
+
+2012-11-23 20:31  sthen
+
+	* usr.sbin/nsd/: query.c, zonec.c: fix mixed code and declarations,
+	  from brad@
+
+2012-11-23 20:30  sthen
+
+	* usr.sbin/nsd/: axfr.c, config.h.in, configure, configure.ac,
+	  dname.c, dns.h, nsd-checkconf.8.in, nsd-notify.8.in,
+	  nsd-notify.c, nsd-patch.8.in, nsd-patch.c, nsd-xfer.8.in,
+	  nsd-xfer.c, nsd.8.in, nsd.c, nsd.conf.5.in, nsdc.8.in, nsec3.c,
+	  query.c, server.c, xfrd-tcp.c, zonec.8.in, zonec.c: resolve
+	  conflicts
+
+2012-11-23 20:29  sthen
+
+	* usr.sbin/nsd/: nsd-checkconf.8.in, server.c, xfrd-notify.c,
+	  xfrd.c, zonec.8.in, zonec.c, difffile.c, dns.h, ipc.c,
+	  nsd-notify.8.in, nsd-patch.8.in, nsd-patch.c, nsd-xfer.8.in,
+	  nsd-xfer.c, nsdc.8.in, nsec3.c, config.h.in, nsd.8.in, nsd.c,
+	  options.h, ipc.h, nsd-notify.c, query.c, tsig.c, xfrd-tcp.c,
+	  axfr.c, configure.ac, nsd.conf.5.in, options.c, configure,
+	  xfrd.h: update to NSD 3.2.14, requested by/ok brad@
+
+2012-09-21 12:49  sthen
+
+	* usr.sbin/nsd/query.c: MFC NSD DoS fix to 5.1-stable, pointed out
+	  by Mathieu Simon on misc@:
+
+	  Fix for VU#624931 CVE-2012-2978: NSD denial of service
+	  vulnerability from non-standard DNS packet from any host on the
+	  internet.
+
+2012-08-28 15:18  sthen
+
+	* usr.sbin/nsd/makedist.sh: remove unused file
+
+2012-08-28 15:15  sthen
+
+	* usr.sbin/nsd/: axfr.c, configure, configure.ac,
+	  nsd-checkconf.8.in, nsd-notify.8.in, nsd-patch.8.in,
+	  nsd-xfer.8.in, nsd.8.in, nsd.conf.5.in, nsdc.8.in, query.c,
+	  server.c, zonec.8.in: resolve conflicts
+
+2012-08-28 15:11  sthen
+
+	* usr.sbin/nsd/: zonec.8.in, configure.ac, difffile.c,
+	  nsd-notify.8.in, nsd-patch.8.in, nsd-xfer.8.in, nsdc.8.in,
+	  query.c, nsd.conf.5.in, axfr.c, configure, nsd-checkconf.8.in,
+	  nsd.8.in, server.c: update to NSD 3.2.13
+
+	  - fix crash in nsd-patch if a zone has been removed from
+	  nsd.conf. (difffile.c)
+
+	  - CVE-2012-2979 DOS fix, this is in optional code which is *not*
+	  used with a standard OpenBSD build. (query.c, server.c)
+
+2012-07-19 17:46  phessler
+
+	* usr.sbin/nsd/query.c: Fix for VU#624931 CVE-2012-2978: NSD denial
+	  of service vulnerability from non-standard DNS packet from any
+	  host on the internet.
+
+	  OK sthen@
+
+2012-07-09 21:56  sthen
+
+	* usr.sbin/nsd/: Makefile.in, axfr.c, config.h.in, configparser.y,
+	  configure, configure.ac, dname.c, dns.c, dns.h,
+	  nsd-checkconf.8.in, nsd-checkconf.c, nsd-notify.8.in,
+	  nsd-patch.8.in, nsd-xfer.8.in, nsd.8.in, nsd.c, nsd.conf.5.in,
+	  nsdc.8.in, query.c, rdata.c, region-allocator.c, server.c,
+	  util.c, util.h, xfrd-tcp.c, zonec.8.in, zparser.y: resolve
+	  conflicts
+
+2012-07-09 21:55  sthen
+
+	* usr.sbin/nsd/: Makefile.in, configparser.y, difffile.c,
+	  iterated_hash.h, nsd-patch.8.in, nsd.conf.sample.in, options.h,
+	  region-allocator.c, xfrd-notify.c, zonec.8.in, acx_nlnetlabs.m4,
+	  axfr.c, buffer.c, configlexer.lex, configure, configure.ac,
+	  configyyrename.h, dbaccess.c, difffile.h, dname.c, dns.c, dns.h,
+	  edns.c, edns.h, ipc.h, namedb.c, namedb.h, netio.c, netio.h,
+	  nsd-checkconf.c, nsd-notify.8.in, nsd-xfer.8.in, nsd.conf.5.in,
+	  nsd.h, nsdc.8.in, options.c, query.c, rbtree.c, rdata.c,
+	  server.c, tsig-openssl.c, tsig.c, xfrd-disk.c, xfrd-disk.h,
+	  xfrd-notify.h, xfrd-tcp.c, xfrd.c, xfrd.h, zlexer.lex, zparser.y,
+	  answer.c, config.h.in, ipc.c, iterated_hash.c,
+	  nsd-checkconf.8.in, nsd.8.in, nsd.c, util.c, util.h, xfrd-tcp.h:
+	  NSD v3.2.11, ok phessler@
+
+2012-04-20 09:49  camield
+
+	* usr.sbin/nsd/nsdc.sh.in: Back to non-verbose, crept back in with
+	  last merge.
+
+	  ok sthen
+
+2012-04-04 17:31  sthen
+
+	* usr.sbin/nsd/Makefile.in: Disable the install target in nsd and
+	  unbound's Makefiles, so if someone runs 'make install' rather
+	  than 'make -f Makefile.bsd-wrapper install' it will just do
+	  nothing rather than put files into /usr/local.  ok jakob@
+
+2012-03-02 08:40  sthen
+
+	* usr.sbin/nsd/: configure, configure.ac, nsd-checkconf.8.in,
+	  nsd-notify.8.in, nsd-patch.8.in, nsd-xfer.8.in, nsd.8.in, nsd.c,
+	  nsd.conf.5.in, nsdc.8.in, nsec3.c, region-allocator.c,
+	  zonec.8.in: resolve conflicts
+
+2012-03-02 08:38  sthen
+
+	* usr.sbin/nsd/: difffile.c, nsd-patch.8.in, acx_nlnetlabs.m4,
+	  configure.ac, nsd-notify.8.in, nsdc.8.in, region-allocator.c,
+	  edns.c, namedb.c, nsd-xfer.8.in, nsd.conf.5.in, xfrd.c,
+	  configure, nsec3.c, namedb.h, nsd-checkconf.8.in, nsd.8.in,
+	  nsd.c, zonec.8.in: import nsd 3.2.10, "cool" jakob@, also looked
+	  over by Brad
+
+2012-01-29 11:24  jakob
+
+	* usr.sbin/nsd/nsdc.sh.in: merge
+
+2012-01-29 11:23  jakob
+
+	* usr.sbin/nsd/: config.h.in, configure.ac, dname.c, dns.h,
+	  nsd-checkconf.8.in, nsd-checkconf.c, nsd-notify.8.in,
+	  nsd-patch.8.in, nsd-xfer.8.in, nsd.8.in, nsd.c, nsd.conf.5.in,
+	  nsdc.8.in, nsdc.sh.in, nsec3.c, query.c, rdata.c, server.c,
+	  zonec.8.in, zonec.c: resolve conflicts
+
+2012-01-29 11:22  jakob
+
+	* usr.sbin/nsd/configure: regen
+
+2012-01-29 11:15  jakob
+
+	* usr.sbin/nsd/: difffile.c, dns.h, nsd-patch.8.in, packet.h,
+	  xfrd-disk.c, xfrd-notify.c, configure.ac, nsd-notify.8.in,
+	  nsdc.8.in, query.c, dname.c, nsd-xfer.8.in, rbtree.c, xfrd.c,
+	  dbaccess.c, dname.h, nsd.conf.5.in, nsec3.h, xfrd-notify.h,
+	  zlexer.lex, dbcreate.c, namedb.c, configure, nsd-checkconf.c,
+	  nsec3.c, rdata.c, namedb.h, nsdc.sh.in, server.c, zonec.c,
+	  answer.c, config.h.in, nsd-checkconf.8.in, nsd.8.in, nsd.c,
+	  packet.c, rbtree.h, zonec.8.in: NSD v3.2.9
+
+2011-06-11 12:48  schwarze
+
+	* usr.sbin/nsd/: Makefile.bsd-wrapper, Makefile.in: Unbreak the
+	  build with MANPS, making sure to still honour NOMAN.	Problem
+	  found and fix tested by jmc@.
+
+	  Note that the patch to Makefile.in is useful for two additional
+	  reasons: 1. It removes an ugly reimplementation of the bsd.man.mk
+	  .8.cat8 target.  2. It will be required anyway when installing
+	  source manuals in the future.
+
+	  The bsd-wrapper patch looks redundant, but isn't.  These rules
+	  are not in bsd.man.mk because elsewhere, the source files (*.8
+	  etc.) are part of the source tree, not generated files.
+
+2011-05-23 14:30  jakob
+
+	* usr.sbin/nsd/Makefile.in: fix manpage build; from theo
+
+2011-05-23 08:20  jakob
+
+	* usr.sbin/nsd/Makefile.in: nsd-zonec.8
+
+2011-05-23 08:16  jakob
+
+	* usr.sbin/nsd/: nsd-checkconf.8.in, nsd-notify.8.in,
+	  nsd-patch.8.in, nsd-xfer.8.in, nsd.8.in, nsd.conf.5.in,
+	  nsdc.8.in, zonec.8.in: make sure nsd-zonec is used instead of
+	  zonec
+
+2011-05-23 06:48  jakob
+
+	* usr.sbin/nsd/: nsd-checkconf.8, nsd-notify.8, nsd-patch.8,
+	  nsd-xfer.8, nsd-zonec.8, nsd.8, nsd.conf.5, nsdc.8: remove old
+	  man-pages
+
+2011-05-21 18:42  jakob
+
+	* usr.sbin/nsd/: config.h.in, configure: regen with autoconf-2.59,
+	  automake-1.9
+
+2011-05-21 18:29  jakob
+
+	* usr.sbin/nsd/: Makefile.in, axfr.c, config.h.in, configparser.y,
+	  configure, configure.ac, dname.c, dns.c, dns.h, nsd-checkconf.c,
+	  nsd-notify.c, nsd-patch.c, nsd-xfer.c, nsd.c, nsdc.sh.in,
+	  nsec3.c, query.c, rdata.c, region-allocator.c, server.c, util.c,
+	  util.h, xfrd-tcp.c, zonec.h, zparser.y: resolve conflicts and
+	  regen configure using autoconf-2.65
+
+2011-05-21 18:17  jakob
+
+	* usr.sbin/nsd/: zonec.8.in, nsd-patch.8.in, nsd-notify.8.in,
+	  nsdc.8.in, nsd-xfer.8.in, nsd.conf.5.in, nsd-checkconf.8.in,
+	  nsd.8.in: Initial revision
+
+2011-05-21 18:17  jakob
+
+	* usr.sbin/nsd/: zonec.8.in, Makefile.in, configparser.y,
+	  difffile.c, iterated_hash.h, nsd-patch.8.in, nsd.conf.sample.in,
+	  options.h, packet.h, tsig.h, xfrd-notify.c, acx_nlnetlabs.m4,
+	  configure.ac, dns.h, nsd-notify.8.in, nsdc.8.in,
+	  region-allocator.c, xfrd-disk.c, zonec.h, query.c, zparser.y,
+	  answer.h, nsd-xfer.8.in, xfrd.c, rbtree.c, xfrd-disk.h, buffer.h,
+	  configparser.c, dname.c, edns.h, nsd-xfer.c, nsd.h, query.h,
+	  tsig-openssl.h, axfr.h, buffer.c, dbaccess.c, dname.h, tsig.c,
+	  configlexer.c, dns.c, edns.c, netio.c, nsec3.h,
+	  region-allocator.h, tsig-openssl.c, xfrd-notify.h,
+	  configlexer.lex, dbcreate.c, difffile.h, nsd.conf.5.in,
+	  options.c, zlexer.lex, zparser.c, ipc.h, namedb.c, rdata.h,
+	  zlexer.c, LICENSE, axfr.c, configure, configyyrename.h,
+	  nsd-checkconf.c, nsec3.c, namedb.h, netio.h, nsdc.sh.in, rdata.c,
+	  xfrd-tcp.c, zonec.c, nsd-checkconf.8.in, nsd-notify.c, nsd.c,
+	  packet.c, server.c, util.c, util.h, xfrd-tcp.h, xfrd.h, answer.c,
+	  config.h.in, ipc.c, iterated_hash.c, nsd-patch.c, nsd.8.in,
+	  rbtree.h: NSD v3.2.8
+
+2011-04-21 16:30  claudio
+
+	* usr.sbin/nsd/nsdc.sh.in: Make nsd-zonec less verbose in nsdc runs
+	  by removing the -v from ZONEC_VERBOSE. This affects nsdc rebuild
+	  and nsdc patch.  Idealy nsdc patch would be silent on success so
+	  that it can be run out of cron without getting mails all the
+	  time.  OK jakob@ sthen@
+
+2011-02-21 20:40  jakob
+
+	* usr.sbin/nsd/nsd.c: call setusercontext(3) before chroot. ok
+	  miod@ sthen@
+
+2011-01-27 12:31  jakob
+
+	* usr.sbin/nsd/Makefile.in: fix realclean target
+
+2011-01-27 12:29  jakob
+
+	* usr.sbin/nsd/configure: regen
+
+2011-01-27 12:29  jakob
+
+	* usr.sbin/nsd/: config.h.in, configparser.y, configure.ac, dns.c,
+	  dns.h, mkinstalldirs, nsd-checkconf.c, nsd-notify.c, nsd-patch.c,
+	  nsdc.sh.in, nsec3.c, query.c, rdata.c, server.c, util.c, zonec.c,
+	  zonec.h, zparser.y: upgrade to NSD 3.2.7; ok sthen@, tested by
+	  multiple people
+
+2011-01-24 10:39  jakob
+
+	* usr.sbin/nsd/: Makefile.bsd-wrapper, nsd-checkconf.8,
+	  nsd-patch.8, nsd-zonec.8, nsd.8, nsd.conf.5, nsdc.8: change
+	  default nsd(8) paths. ok sthen@
+
+2010-10-31 07:40  jj
+
+	* usr.sbin/nsd/nsd.conf.5: cant start a line with a single quote.
+	  ok @schwarze
+
+2010-10-01 20:45  jakob
+
+	* usr.sbin/nsd/: nsd-checkconf.8, nsd-notify.8, nsd-patch.8,
+	  nsd-xfer.8, nsd.conf.5: fix more nsd-zonec references
+
+2010-10-01 20:22  jakob
+
+	* usr.sbin/nsd/nsd.8: fix reference to nsd-zonec; from Kirill
+	  Bychkov
+
+2010-09-24 00:00  jsg
+
+	* usr.sbin/nsd/nsd-checkconf.c: fix a overflow found by parfait ok
+	  jakob@
+
+2010-08-22 09:31  jakob
+
+	* usr.sbin/nsd/: config.h.in, configure: regen
+
+2010-08-22 09:30  jakob
+
+	* usr.sbin/nsd/Makefile.bsd-wrapper: --enable-nsid now default
+
+2010-08-22 09:24  jakob
+
+	* usr.sbin/nsd/: axfr.c, configure.ac, nsd-notify.c, nsd-xfer.c,
+	  nsd.c, nsdc.8, util.c, xfrd-tcp.c, zonec.c: merge
+
+2010-08-22 09:21  jakob
+
+	* usr.sbin/nsd/makedist.sh: Initial revision
+
+2010-08-22 09:21  jakob
+
+	* usr.sbin/nsd/: options.h, nsd.8, nsd.conf.sample.in,
+	  xfrd-notify.c, xfrd-notify.h, configure.ac, util.c,
+	  acx_nlnetlabs.m4, dns.h, makedist.sh, nsd-patch.8, nsd.conf.5,
+	  rdata.c, tsig-openssl.c, tsig-openssl.h, nsd-checkconf.8,
+	  nsd-notify.8, nsd-xfer.8, tsig.c, nsd.c, nsd.h, xfrd.c, zonec.8,
+	  difffile.c, xfrd.h, dbaccess.c, nsd-patch.c, nsdc.8, axfr.c,
+	  nsd-notify.c, nsd-xfer.c, query.c, buffer.c, query.h, xfrd-tcp.c,
+	  options.c, zonec.c: NSD v3.2.6
+
+2010-04-15 21:14  jakob
+
+	* usr.sbin/nsd/: Makefile.in, config.h.in, configlexer.c,
+	  configparser.c, configparser.h, configure, configure.ac,
+	  nsd-notify.c, nsd-zonec.8, nsd.c, nsdc.8, nsdc.sh.in, util.c,
+	  util.h, zlexer.c, zparser.c, zparser.h: resolve conflicts from
+	  import of v3.2.5
+
+2010-04-15 20:56  jakob
+
+	* usr.sbin/nsd/: configparser.c, configlexer.c, zparser.h,
+	  zparser.c, zlexer.c, configparser.h: Initial revision
+
+2010-04-15 20:56  jakob
+
+	* usr.sbin/nsd/: Makefile.in, options.h, configparser.y,
+	  difffile.c, nsd.conf.sample.in, configure.ac, region-allocator.c,
+	  acx_nlnetlabs.m4, configparser.c, dname.c, nsd-notify.8,
+	  nsd-xfer.c, zonec.8, dbaccess.c, configlexer.c,
+	  region-allocator.h, zparser.h, configlexer.lex, dns.c,
+	  nsd-xfer.8, zlexer.lex, dbcreate.c, options.c, nsd.8, zparser.c,
+	  zlexer.c, axfr.c, configure, nsd-checkconf.8, nsd-checkconf.c,
+	  nsd.conf.5, nsdc.8, namedb.h, nsdc.sh.in, xfrd-tcp.c, server.c,
+	  nsd-notify.c, nsd-patch.8, nsd.c, util.c, util.h, config.h.in,
+	  configparser.h: NSD v3.2.5
+
+2010-02-25 08:17  jakob
+
+	* usr.sbin/nsd/nsd-notify.c: make nsd compile on gcc2 platforms;
+	  from miod@
+
+2010-02-24 14:03  jakob
+
+	* usr.sbin/nsd/nsd.c: exit if paths are not relative to chroot
+
+2010-02-24 07:36  jakob
+
+	* usr.sbin/nsd/configure: regen
+
+2010-02-24 07:36  jakob
+
+	* usr.sbin/nsd/: configure.ac, nsd.c: better default chroot
+
+2010-01-27 14:39  jakob
+
+	* usr.sbin/nsd/util.c: use arc4random() instead of random()
+
+2010-01-27 10:37  jakob
+
+	* usr.sbin/nsd/: nsd-notify.c, nsd-xfer.c, util.c, util.h,
+	  xfrd-tcp.c: merge QID generation patch from NSD trunk
+
+2010-01-17 20:44  chl
+
+	* usr.sbin/nsd/: axfr.c, dname.c, dns.c, nsd.c, region-allocator.c,
+	  util.c: strcpy/strncat/sprintf --> strlcpy/strlcat/snprintf
+
+	  ok jakob@
+
+2010-01-17 19:36  jakob
+
+	* usr.sbin/nsd/: config.h.in, configure: regen with
+	  {autoconf,autoheader}-2.62
+
+2010-01-17 19:34  jakob
+
+	* usr.sbin/nsd/Makefile.bsd-wrapper: use --with-chroot
+
+2010-01-17 19:32  jakob
+
+	* usr.sbin/nsd/: configure.ac, nsd.c: add --with-chroot option to
+	  set default chroot directory
+
+2010-01-16 17:33  jakob
+
+	* usr.sbin/nsd/Makefile.bsd-wrapper: run as user _nsd
+
+2010-01-15 19:39  jakob
+
+	* usr.sbin/nsd/: Makefile.bsd-wrapper, Makefile.in, nsd-zonec.8,
+	  nsdc.8, nsdc.sh.in, zonec.8, zonec.c: rename zonec to nsd-zonec
+
+2010-01-15 19:28  jakob
+
+	* usr.sbin/nsd/Makefile.bsd-wrapper: init
+
+2010-01-15 19:24  jakob
+
+	* usr.sbin/nsd/: axfr.h, difffile.h, mkinstalldirs, nsdc.sh.in,
+	  region-allocator.c, util.c, util.h, zonec.8, axfr.c,
+	  nsd-notify.8, nsd-xfer.8, nsd-xfer.c, nsd.conf.5, rdata.c,
+	  LICENSE, dname.c, edns.c, ipc.h, iterated_hash.h, netio.h, nsd.8,
+	  options.c, packet.h, xfrd-disk.h, answer.c, dns.c, install-sh,
+	  iterated_hash.c, tsig.c, options.h, packet.c, rdata.h, zonec.c,
+	  zparser.y, answer.h, configparser.y, dns.h, edns.h, namedb.h,
+	  nsec3.c, tsig-openssl.h, tsig.h, zonec.h, buffer.c, buffer.h,
+	  dname.h, nsd-notify.c, nsec3.h, query.h, tsig-openssl.c,
+	  xfrd-disk.c, Makefile.in, config.h.in, query.c, xfrd-notify.h,
+	  xfrd.c, xfrd.h, ipc.c, nsd-checkconf.c, nsd.c, nsd-patch.c,
+	  nsd.conf.sample.in, region-allocator.h, server.c,
+	  configyyrename.h, dbaccess.c, netio.c, nsd-checkconf.8, nsd.h,
+	  nsdc.8, rbtree.c, xfrd-notify.c, zlexer.lex, configlexer.lex,
+	  configure.ac, dbcreate.c, nsd-patch.8, xfrd-tcp.c, xfrd-tcp.h,
+	  difffile.c, namedb.c, acx_nlnetlabs.m4, configure, rbtree.h:
+	  Initial revision
+
+2010-01-15 19:24  jakob
+
+	* usr.sbin/nsd/: axfr.h, difffile.h, mkinstalldirs, nsdc.sh.in,
+	  region-allocator.c, util.c, util.h, zonec.8, axfr.c,
+	  nsd-notify.8, nsd-xfer.8, nsd-xfer.c, nsd.conf.5, rdata.c,
+	  LICENSE, dname.c, edns.c, ipc.h, iterated_hash.h, netio.h, nsd.8,
+	  options.c, packet.h, xfrd-disk.h, answer.c, dns.c, install-sh,
+	  iterated_hash.c, tsig.c, options.h, packet.c, rdata.h, zonec.c,
+	  zparser.y, answer.h, configparser.y, dns.h, edns.h, namedb.h,
+	  nsec3.c, tsig-openssl.h, tsig.h, zonec.h, buffer.c, buffer.h,
+	  dname.h, nsd-notify.c, nsec3.h, query.h, tsig-openssl.c,
+	  xfrd-disk.c, Makefile.in, config.h.in, query.c, xfrd-notify.h,
+	  xfrd.c, xfrd.h, ipc.c, nsd-checkconf.c, nsd.c, nsd-patch.c,
+	  nsd.conf.sample.in, region-allocator.h, server.c,
+	  configyyrename.h, dbaccess.c, netio.c, nsd-checkconf.8, nsd.h,
+	  nsdc.8, rbtree.c, xfrd-notify.c, zlexer.lex, configlexer.lex,
+	  configure.ac, dbcreate.c, nsd-patch.8, xfrd-tcp.c, xfrd-tcp.h,
+	  difffile.c, namedb.c, acx_nlnetlabs.m4, configure, rbtree.h: NSD
+	  v3.2.4
+
