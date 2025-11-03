@@ -1,23 +1,5 @@
 # NSD
 
-nsd - Name Server Daemon (NSD).
-
-http://cvsweb.openbsd.org/cgi-bin/cvsweb/src/usr.sbin/nsd/
-
-## FreeBSD
-
-### Requirements
-* pkgconf
-
-### Compile
-```
-$ cd src/usr.sbin/nsd/
-$ make -f Makefile.bsd-wrapper config
-$ make -f Makefile.bsd-wrapper
-```
-
-# NSD README
-
 [![GitHub Build Status](https://github.com/NLnetLabs/nsd/actions/workflows/build-test.yml/badge.svg?branch=master)](https://github.com/NLnetLabs/nsd/actions)
 [![Coverity Scan Status](https://scan.coverity.com/projects/18867/badge.svg)](https://scan.coverity.com/projects/nlnetlabs-nsd)
 [![Packaging status](https://repology.org/badge/tiny-repos/nsd.svg)](https://repology.org/project/nsd/versions)
