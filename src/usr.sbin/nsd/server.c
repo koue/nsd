@@ -505,10 +505,12 @@ restart_child_servers(struct nsd *nsd, region_type* region, netio_type* netio,
 				region_destroy(region);
 #endif
 
+#ifdef __OpenBSD__
 				if (pledge("stdio rpath inet", NULL) == -1) {
 					log_msg(LOG_ERR, "pledge");
 					exit(1);
 				}
+#endif
 
 				nsd->pid = 0;
 				nsd->child_count = 0;

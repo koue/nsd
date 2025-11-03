@@ -11,7 +11,7 @@ CONFIGURE_OPTS=	--prefix=/usr \
 		--localstatedir=/var \
 		--sysconfdir=/etc \
 		--with-ssl=/usr \
-		--with-user=_nsd \
+		--with-user=nsd \
 		--with-chroot=${CHROOTDIR} \
 		--with-configdir=${CHROOTDIR}/etc \
 		--with-pidfile="" \
@@ -20,7 +20,7 @@ CONFIGURE_OPTS=	--prefix=/usr \
 		--with-zonelistfile="${CHROOTDIR}/db/zone.list" \
 		--with-xfrdir=${CHROOTDIR}/run/xfr \
 		--with-xfrdfile=${CHROOTDIR}/run/xfrd.state \
-		--with-libevent=/usr \
+		--with-libevent=no \
 		--disable-dnstap
 
 PROG=	nsd nsd-checkconf nsd-checkzone nsd-control
@@ -28,7 +28,7 @@ PROG=	nsd nsd-checkconf nsd-checkzone nsd-control
 MAN=	nsd.8 nsd-checkconf.8 nsd-checkzone.8 nsd-control.8 nsd.conf.5
 
 all:	config.status
-	@exec ${MAKE}
+	${MAKE}
 
 ${MAN}:	config.status
 
@@ -36,12 +36,12 @@ ${MAN}:	config.status
 
 config: .FORCE
 	-rm -f config.cache
-	PATH="/bin:/usr/bin:/sbin:/usr/sbin" \
+	PATH="/bin:/usr/bin:/usr/local/bin:/sbin:/usr/sbin" \
 	${XCFLAGS} \
 	sh ${.CURDIR}/configure ${CONFIGURE_OPTS}
 
 config.status:
-	PATH="/bin:/usr/bin:/sbin:/usr/sbin" \
+	PATH="/bin:/usr/bin:/usr/local/bin:/sbin:/usr/sbin" \
 	${XCFLAGS} \
 	sh ${.CURDIR}/configure ${CONFIGURE_OPTS}
 

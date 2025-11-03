@@ -1,0 +1,2 @@
+fetch https://raw.githubusercontent.com/NLnetLabs/nsd/refs/heads/master/compat/cpuset.c
+fetch https://raw.githubusercontent.com/NLnetLabs/nsd/refs/heads/master/compat/cpuset.h

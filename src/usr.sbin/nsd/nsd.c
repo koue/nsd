@@ -1711,8 +1711,10 @@ main(int argc, char *argv[])
 	}
 #endif /* HAVE_GETPWNAM */
 
+#ifdef __OpenBSD__
 	if (pledge("stdio rpath wpath cpath dns inet proc", NULL) == -1)
 		error("pledge");
+#endif
 
 	xfrd_make_tempdir(&nsd);
 #ifdef USE_ZONE_STATS
