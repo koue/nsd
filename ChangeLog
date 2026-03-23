@@ -1,3 +1,39 @@
+2026-03-21 21:36  sthen
+
+	* usr.sbin/nsd/: Makefile.in, README.md, acx_nlnetlabs.m4, axfr.c,
+	  config.h.in, configlexer.lex, configparser.y, configure,
+	  configure.ac, dbaccess.c, dbcreate.c, difffile.c, difffile.h,
+	  dname.c, dname.h, dns.c, dns.h, ixfr.c, ixfr.h, ixfrcreate.c,
+	  namedb.c, namedb.h, nsd-checkconf.8.in, nsd-checkzone.8.in,
+	  nsd-control.8.in, nsd-mem.c, nsd.8.in, nsd.conf.5.in,
+	  nsd.conf.sample.in, nsec3.c, options.c, options.h, packet.c,
+	  query.c, rdata.c, rdata.h, remote.c, server.c, util.c, util.h,
+	  xfrd-catalog-zones.c, xfrd-disk.c, xfrd.c, xfrd.h, zonec.c,
+	  zonec.h, dnstap/dnstap.m4, doc/ChangeLog, doc/README,
+	  doc/RELNOTES: merge nsd 4.14.2
+
+2026-03-21 21:34  sthen
+
+	* usr.sbin/nsd/: convert-release-notes.sh, compat/cpuset.h: Initial
+	  revision
+
+2026-03-21 21:34  sthen
+
+	* usr.sbin/nsd/: config.h.in, configure, xdp-server.c,
+	  xfrd-catalog-zones.c, xfrd-disk.c, xfrd.c, xfrd.h, zonec.c,
+	  zonec.h, ixfr.h, ixfrcreate.c, metrics.c, namedb.c, namedb.h,
+	  nsd-checkconf.8.in, nsd-checkzone.8.in, nsd-control.8.in,
+	  nsd-mem.c, nsd.8.in, nsd.conf.5.in, nsd.conf.sample.in, nsec3.c,
+	  options.c, options.h, packet.c, query.c, rdata.c, rdata.h,
+	  remote.c, server.c, util.c, util.h, Makefile.in, README.md,
+	  acx_nlnetlabs.m4, axfr.c, configlexer.lex, configparser.y,
+	  configure.ac, convert-release-notes.sh, dbaccess.c, dbcreate.c,
+	  difffile.c, difffile.h, dname.c, dname.h, dns.c, dns.h, ixfr.c,
+	  compat/cpuset.h, dnstap/dnstap.m4, doc/ChangeLog, doc/README,
+	  doc/RELNOTES, simdzone/CHANGELOG.md, simdzone/configure,
+	  simdzone/configure.ac, simdzone/src/generic/types.h: import nsd
+	  4.14.2
+
 2025-09-06 17:47  sthen
 
 	* usr.sbin/nsd/server.c: patch to deactivate upstream change which
@@ -1073,15 +1109,32 @@
 
 	* usr.sbin/nsd/configure: regen configure, reported by deraadt@
 
+2015-09-10 14:13  sthen
+
+	* usr.sbin/nsd/compat/: b64_ntop.c, b64_pton.c: Remove compat files
+	  no longer required.
+
 2015-09-10 14:12  sthen
 
 	* usr.sbin/nsd/: configparser.y, configure.ac, options.c, rdata.c,
-	  zonec.c: Fix handling of compat/b64_{ntop,pton} by using
-	  __-prefixed versions directly, similar to what ssh does.
-	  Otherwise they need resolv.h including, which causes problems on
-	  OS with newer resolv.h/nameser.h headers which cause conflicts
-	  with NSD's T_xxx resource record #defines. autoconf bits adapted
-	  from tmux portable.  ok florian@
+	  zonec.c, compat/b64_ntop.c, compat/b64_pton.c: Fix handling of
+	  compat/b64_{ntop,pton} by using __-prefixed versions directly,
+	  similar to what ssh does. Otherwise they need resolv.h including,
+	  which causes problems on OS with newer resolv.h/nameser.h headers
+	  which cause conflicts with NSD's T_xxx resource record #defines.
+	  autoconf bits adapted from tmux portable.  ok florian@
+
+2015-07-19 17:52  sthen
+
+	* usr.sbin/nsd/compat/: basename.c, fake-rfc2553.c, fake-rfc2553.h,
+	  inet_aton.c, inet_ntop.c, inet_pton.c, malloc.c, memcmp.c,
+	  memcmp.h, memmove.c, pselect.c, snprintf.c, strlcat.c, strlcpy.c,
+	  strptime.c: remove unused compat files, ok florian@
+
+	  b64_{ntop,pton} remain for now, they are in libc as
+	  __b64_{ntop,pton} but to use this we either need to pull in
+	  resolv.h (which does "#define b64_ntop __b64_ntop") or access the
+	  __ versions directly (as done in ssh).
 
 2015-07-17 17:36  sthen
 
@@ -1089,8 +1142,8 @@
 	  configure, configure.ac, difffile.c, dname.c, namedb.c, namedb.h,
 	  nsd-checkconf.8.in, nsd-checkconf.c, nsd-control.8.in, nsd.c,
 	  nsd.conf.5.in, query.c, rdata.c, region-allocator.c, remote.c,
-	  rrl.c, server.c, udb.c, util.c, util.h, zonec.c, zparser.y: merge
-	  conflicts
+	  rrl.c, server.c, udb.c, util.c, util.h, zonec.c, zparser.y,
+	  compat/b64_pton.c: merge conflicts
 
 2015-07-17 17:36  sthen
 
@@ -1102,8 +1155,9 @@
 	  nsd-control.c, nsd.8.in, nsd.c, nsd.conf.5.in, nsd.h, packet.c,
 	  packet.h, query.c, radtree.c, rdata.c, region-allocator.c,
 	  region-allocator.h, remote.c, rrl.c, server.c, tsig-openssl.c,
-	  tsig.h, udb.c, util.c, util.h, xfrd-tcp.c, zonec.c, zparser.y:
-	  update to NSD 4.1.3, ok florian@, also tested by brad
+	  tsig.h, udb.c, util.c, util.h, xfrd-tcp.c, zonec.c, zparser.y,
+	  compat/b64_pton.c: update to NSD 4.1.3, ok florian@, also tested
+	  by brad
 
 2015-02-10 22:06  brad
 
@@ -1124,7 +1178,8 @@
 	  configure.ac, difffile.c, dname.c, namedb.h, nsd-checkconf.8.in,
 	  nsd-checkconf.c, nsd-control.8.in, nsd.8.in, nsd.c,
 	  nsd.conf.5.in, query.c, remote.c, server.c, util.c, xfrd-disk.c,
-	  xfrd-tcp.c, xfrd.c, xfrd.h, zonec.c: merge conflicts
+	  xfrd-tcp.c, xfrd.c, xfrd.h, zonec.c, compat/b64_pton.c,
+	  compat/strptime.c: merge conflicts
 
 2015-02-03 10:24  brad
 
@@ -1135,8 +1190,9 @@
 	  options.h, dbaccess.c, difffile.c, difffile.h, dname.c, dns.h,
 	  ipc.h, namedb.c, namedb.h, nsd-control.8.in, zlexer.lex,
 	  config.h.in, ipc.c, rdata.c, configlexer.lex, nsd-checkconf.8.in,
-	  options.c, udb.c, zonec.c, zparser.y, nsd-checkzone.8.in, util.c:
-	  update to NSD 4.1.1, ok sthen@
+	  options.c, udb.c, zonec.c, zparser.y, nsd-checkzone.8.in, util.c,
+	  compat/b64_pton.c, compat/inet_aton.c, compat/strptime.c: update
+	  to NSD 4.1.1, ok sthen@
 
 2015-01-26 12:06  brad
 
@@ -1159,8 +1215,9 @@
 2015-01-12 14:36  millert
 
 	* usr.sbin/nsd/: dns.c, nsd.c, rdata.c, remote.c, tsig.c, util.c,
-	  zlexer.lex, zonec.c: Use proper casts for ctype functions.  This
-	  is already fixed in nsd trunk.  OK doug@
+	  zlexer.lex, zonec.c, compat/b64_pton.c, compat/inet_aton.c,
+	  compat/strptime.c: Use proper casts for ctype functions.  This is
+	  already fixed in nsd trunk.  OK doug@
 
 2014-12-25 20:13  otto
 
@@ -1231,8 +1288,8 @@
 	  zlexer.lex, config.h.in, dbaccess.c, dbcreate.c, dname.c, ipc.c,
 	  lookup3.c, nsd-checkzone.c, nsd-control.8.in, nsd-mem.c, util.h,
 	  configlexer.lex, udb.c, zparser.y, nsd-checkconf.8.in,
-	  nsd-checkzone.8.in, options.c, util.c: update to NSD 4.1.0, ok
-	  sthen@
+	  nsd-checkzone.8.in, options.c, util.c, compat/fake-rfc2553.c:
+	  update to NSD 4.1.0, ok sthen@
 
 2014-05-04 12:24  kettenis
 
@@ -1259,7 +1316,7 @@
 
 	* usr.sbin/nsd/: axfr.c, config.h.in, configure, configure.ac,
 	  nsd-checkconf.8.in, nsd.8.in, nsd.conf.5.in, query.c, server.c,
-	  zonec.c: merge conflicts
+	  zonec.c, compat/snprintf.c: merge conflicts
 
 2014-03-13 02:00  brad
 
@@ -1269,7 +1326,7 @@
 	  config.h.in, dbaccess.c, dbcreate.c, mini_event.c, namedb.c,
 	  nsd-control.8.in, radtree.c, xfrd-notify.h, lookup3.h,
 	  nsd-control-setup.sh.in, udbzone.c, nsd-checkconf.8.in, udb.c,
-	  zonec.c: update to NSD 4.0.2, ok sthen@
+	  zonec.c, compat/snprintf.c: update to NSD 4.0.2, ok sthen@
 
 2014-02-04 03:15  brad
 
@@ -1318,7 +1375,7 @@
 	  nsd-checkconf.c, nsd.8.in, nsd.c, nsd.conf.5.in, nsec3.c,
 	  query.c, rdata.c, region-allocator.c, rrl.c, server.c, util.c,
 	  util.h, xfrd-disk.c, xfrd-tcp.c, xfrd.c, zonec.c, zonec.h,
-	  zparser.y: merge conflicts
+	  zparser.y, compat/snprintf.c: merge conflicts
 
 2013-11-26 12:50  sthen
 
@@ -1347,9 +1404,10 @@
 	  acx_nlnetlabs.m4, ipc.c, rdata.c, udbradtree.c,
 	  nsd-control-setup.sh.in, udbradtree.h, udbzone.c, zparser.y,
 	  zonec.c, udb.c, configlexer.lex, iterated_hash.c,
-	  nsd-checkconf.8.in, options.c, query.h, rbtree.c, util.c: import
-	  NSD 4.0.0, tests from Dorian Büttner, Patrik Lundin, requested
-	  by brad@
+	  nsd-checkconf.8.in, options.c, query.h, rbtree.c, util.c,
+	  compat/memcmp.c, compat/memmove.c, compat/strptime.c: import NSD
+	  4.0.0, tests from Dorian Büttner, Patrik Lundin, requested by
+	  brad@
 
 2013-09-04 12:24  sthen
 
@@ -1364,7 +1422,8 @@
 	  nsd-checkconf.8.in, nsd-checkconf.c, nsd-notify.8.in,
 	  nsd-patch.8.in, nsd-xfer.8.in, nsd.8.in, nsd.c, nsd.conf.5.in,
 	  nsdc.8.in, query.c, rdata.c, region-allocator.c, server.c,
-	  util.c, zonec.8.in, zonec.c, zonec.h, zparser.y: merge NSD 3.2.16
+	  util.c, zonec.8.in, zonec.c, zonec.h, zparser.y,
+	  compat/snprintf.c: merge NSD 3.2.16
 
 2013-09-03 09:21  sthen
 
@@ -1376,8 +1435,8 @@
 	  lookup3.c, netio.h, nsd-checkconf.8.in, nsd-notify.8.in,
 	  nsd-patch.8.in, nsd.8.in, nsd.c, nsd.conf.5.in, util.c,
 	  zonec.8.in, zonec.c, zparser.y, nsd.h, nsdc.8.in, options.c,
-	  rrl.h, xfrd-disk.c, xfrd.h, zonec.h: update to NSD 3.2.16, ok
-	  deraadt@ brad@
+	  rrl.h, xfrd-disk.c, xfrd.h, zonec.h, compat/snprintf.c: update to
+	  NSD 3.2.16, ok deraadt@ brad@
 
 2013-03-29 12:13  sthen
 
@@ -1500,6 +1559,10 @@
 
 2012-07-09 21:55  sthen
 
+	* usr.sbin/nsd/compat/memcmp.h: Initial revision
+
+2012-07-09 21:55  sthen
+
 	* usr.sbin/nsd/: Makefile.in, configparser.y, difffile.c,
 	  iterated_hash.h, nsd-patch.8.in, nsd.conf.sample.in, options.h,
 	  region-allocator.c, xfrd-notify.c, zonec.8.in, acx_nlnetlabs.m4,
@@ -1511,8 +1574,9 @@
 	  server.c, tsig-openssl.c, tsig.c, xfrd-disk.c, xfrd-disk.h,
 	  xfrd-notify.h, xfrd-tcp.c, xfrd.c, xfrd.h, zlexer.lex, zparser.y,
 	  answer.c, config.h.in, ipc.c, iterated_hash.c,
-	  nsd-checkconf.8.in, nsd.8.in, nsd.c, util.c, util.h, xfrd-tcp.h:
-	  NSD v3.2.11, ok phessler@
+	  nsd-checkconf.8.in, nsd.8.in, nsd.c, util.c, util.h, xfrd-tcp.h,
+	  compat/memcmp.c, compat/memcmp.h, compat/memmove.c: NSD v3.2.11,
+	  ok phessler@
 
 2012-04-20 09:49  camield
 
@@ -1541,8 +1605,8 @@
 	  configure.ac, nsd-notify.8.in, nsdc.8.in, region-allocator.c,
 	  edns.c, namedb.c, nsd-xfer.8.in, nsd.conf.5.in, xfrd.c,
 	  configure, nsec3.c, namedb.h, nsd-checkconf.8.in, nsd.8.in,
-	  nsd.c, zonec.8.in: import nsd 3.2.10, "cool" jakob@, also looked
-	  over by Brad
+	  nsd.c, zonec.8.in, compat/pselect.c: import nsd 3.2.10, "cool"
+	  jakob@, also looked over by Brad
 
 2012-01-29 11:24  jakob
 
@@ -1569,7 +1633,8 @@
 	  zlexer.lex, dbcreate.c, namedb.c, configure, nsd-checkconf.c,
 	  nsec3.c, rdata.c, namedb.h, nsdc.sh.in, server.c, zonec.c,
 	  answer.c, config.h.in, nsd-checkconf.8.in, nsd.8.in, nsd.c,
-	  packet.c, rbtree.h, zonec.8.in: NSD v3.2.9
+	  packet.c, rbtree.h, zonec.8.in, compat/memcmp.c,
+	  compat/memmove.c: NSD v3.2.9
 
 2011-06-11 12:48  schwarze
 
@@ -1646,7 +1711,8 @@
 	  xfrd-tcp.c, zonec.c, nsd-checkconf.8.in, nsd-notify.c, nsd.c,
 	  packet.c, server.c, util.c, util.h, xfrd-tcp.h, xfrd.h, answer.c,
 	  config.h.in, ipc.c, iterated_hash.c, nsd-patch.c, nsd.8.in,
-	  rbtree.h: NSD v3.2.8
+	  rbtree.h, compat/memcmp.c, compat/memmove.c, compat/strptime.c:
+	  NSD v3.2.8
 
 2011-04-21 16:30  claudio
 
@@ -1711,6 +1777,10 @@
 
 	* usr.sbin/nsd/Makefile.bsd-wrapper: --enable-nsid now default
 
+2010-08-22 09:25  jakob
+
+	* usr.sbin/nsd/compat/.c-mode-rc.el: remove
+
 2010-08-22 09:24  jakob
 
 	* usr.sbin/nsd/: axfr.c, configure.ac, nsd-notify.c, nsd-xfer.c,
@@ -1718,7 +1788,8 @@
 
 2010-08-22 09:21  jakob
 
-	* usr.sbin/nsd/makedist.sh: Initial revision
+	* usr.sbin/nsd/: makedist.sh, compat/.c-mode-rc.el: Initial
+	  revision
 
 2010-08-22 09:21  jakob
 
@@ -1729,7 +1800,7 @@
 	  nsd-notify.8, nsd-xfer.8, tsig.c, nsd.c, nsd.h, xfrd.c, zonec.8,
 	  difffile.c, xfrd.h, dbaccess.c, nsd-patch.c, nsdc.8, axfr.c,
 	  nsd-notify.c, nsd-xfer.c, query.c, buffer.c, query.h, xfrd-tcp.c,
-	  options.c, zonec.c: NSD v3.2.6
+	  options.c, zonec.c, compat/.c-mode-rc.el: NSD v3.2.6
 
 2010-04-15 21:14  jakob
 
@@ -1742,7 +1813,8 @@
 2010-04-15 20:56  jakob
 
 	* usr.sbin/nsd/: configparser.c, configlexer.c, zparser.h,
-	  zparser.c, zlexer.c, configparser.h: Initial revision
+	  zparser.c, zlexer.c, configparser.h, compat/memcmp.c,
+	  compat/strlcat.c: Initial revision
 
 2010-04-15 20:56  jakob
 
@@ -1755,7 +1827,8 @@
 	  zlexer.c, axfr.c, configure, nsd-checkconf.8, nsd-checkconf.c,
 	  nsd.conf.5, nsdc.8, namedb.h, nsdc.sh.in, xfrd-tcp.c, server.c,
 	  nsd-notify.c, nsd-patch.8, nsd.c, util.c, util.h, config.h.in,
-	  configparser.h: NSD v3.2.5
+	  configparser.h, compat/b64_pton.c, compat/snprintf.c,
+	  compat/memcmp.c, compat/strlcat.c: NSD v3.2.5
 
 2010-02-25 08:17  jakob
 
@@ -1834,8 +1907,12 @@
 	  configyyrename.h, dbaccess.c, netio.c, nsd-checkconf.8, nsd.h,
 	  nsdc.8, rbtree.c, xfrd-notify.c, zlexer.lex, configlexer.lex,
 	  configure.ac, dbcreate.c, nsd-patch.8, xfrd-tcp.c, xfrd-tcp.h,
-	  difffile.c, namedb.c, acx_nlnetlabs.m4, configure, rbtree.h:
-	  Initial revision
+	  difffile.c, namedb.c, acx_nlnetlabs.m4, configure, rbtree.h,
+	  compat/b64_ntop.c, compat/b64_pton.c, compat/basename.c,
+	  compat/fake-rfc2553.c, compat/fake-rfc2553.h, compat/inet_aton.c,
+	  compat/inet_ntop.c, compat/inet_pton.c, compat/malloc.c,
+	  compat/memmove.c, compat/pselect.c, compat/snprintf.c,
+	  compat/strlcpy.c, compat/strptime.c: Initial revision
 
 2010-01-15 19:24  jakob
 
@@ -1854,6 +1931,10 @@
 	  configyyrename.h, dbaccess.c, netio.c, nsd-checkconf.8, nsd.h,
 	  nsdc.8, rbtree.c, xfrd-notify.c, zlexer.lex, configlexer.lex,
 	  configure.ac, dbcreate.c, nsd-patch.8, xfrd-tcp.c, xfrd-tcp.h,
-	  difffile.c, namedb.c, acx_nlnetlabs.m4, configure, rbtree.h: NSD
-	  v3.2.4
+	  difffile.c, namedb.c, acx_nlnetlabs.m4, configure, rbtree.h,
+	  compat/b64_ntop.c, compat/b64_pton.c, compat/basename.c,
+	  compat/fake-rfc2553.c, compat/fake-rfc2553.h, compat/inet_aton.c,
+	  compat/inet_ntop.c, compat/inet_pton.c, compat/malloc.c,
+	  compat/memmove.c, compat/pselect.c, compat/snprintf.c,
+	  compat/strlcpy.c, compat/strptime.c: NSD v3.2.4
 
