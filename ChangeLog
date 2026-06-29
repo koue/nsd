@@ -1,3 +1,42 @@
+2026-06-26 08:55  sthen
+
+	* usr.sbin/nsd/: aclocal.m4, config.guess, config.h.in, config.sub,
+	  configure, configure.ac, install-sh, nsd-checkconf.8.in,
+	  nsd-checkzone.8.in, nsd-control.8.in, nsd.8.in, nsd.conf.5.in,
+	  doc/ChangeLog, doc/README, doc/RELNOTES, simdzone/configure:
+	  merge NSD 4.14.3 (why they regenerated autoconf files with an
+	  older version, I do not know...)
+
+2026-06-26 08:50  sthen
+
+	* usr.sbin/nsd/: nsd.8.in, config.guess, options.h, rdata.c,
+	  nsd.conf.5.in, configure, nsd-control.8.in, config.sub,
+	  nsd-checkzone.8.in, server.c, nsd-checkconf.8.in, options.c,
+	  config.h.in, aclocal.m4, configure.ac, install-sh,
+	  simdzone/config.h.in, simdzone/configure, simdzone/config.guess,
+	  simdzone/config.sub, doc/ChangeLog, doc/README, doc/RELNOTES:
+	  import NSD 4.14.3
+
+2026-06-26 08:31  florian
+
+	* usr.sbin/nsd/: nsd.conf.5.in, options.c, options.h, rdata.c,
+	  server.c: Fix CVE-2026-12244, CVE-2026-12245, CVE-2026-12246 and
+	  CVE-2026-12490
+
+	  - CVE-2026-12244: A specially crafted SVCB RR can cause a heap
+	  overflow of up to 65509 attacker controlled bytes.  -
+	  CVE-2026-12245: If NSD is configured with DNS over TLS, a
+	  client that performs a TLS action, closing the connection early,
+	   causes a crash and restart of the server process. An attacker
+	  can	keep all children in a crash-restart loop denying DoT
+	  service.  - CVE-2026-12246: The RR type APL rdata address, if too
+	  large,   causes out of bounds write on the stack, when the
+	  zonefile is written	out.  - CVE-2026-12490: Secondaries
+	  authenticated by a client   certificate to transfer a zone over
+	  TLS, can bypass verification by   transferring over TCP.
+
+	  OK sthen
+
 2026-03-21 21:36  sthen
 
 	* usr.sbin/nsd/: Makefile.in, README.md, acx_nlnetlabs.m4, axfr.c,
