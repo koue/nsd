@@ -2,7 +2,7 @@
 
 nsd - Name Server Daemon (NSD).
 
-http://cvsweb.openbsd.org/cgi-bin/cvsweb/src/usr.sbin/nsd/
+http://cvsweb.openbsd.org/src/usr.sbin/nsd/
 
 ## FreeBSD
 
