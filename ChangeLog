@@ -1,3 +1,29 @@
+2026-07-14 16:20  sthen
+
+	* usr.sbin/nsd/: README.md, axfr.c, configure, configure.ac,
+	  difffile.c, difffile.h, dname.c, ixfr.c, ixfr.h, namedb.c,
+	  nsd-checkconf.8.in, nsd-checkzone.8.in, nsd-control.8.in,
+	  nsd.8.in, nsd.conf.5.in, nsec3.c, nsec3.h, options.c, query.c,
+	  rdata.c, remote.c, server.c, udb.h, verify.c,
+	  xfrd-catalog-zones.c, xfrd-tcp.c, xfrd.c, xfrd.h, doc/ChangeLog,
+	  doc/README, doc/RELNOTES, simdzone/configure,
+	  util/proxy_protocol.c, util/proxy_protocol.h: merge NSD 4.15.0
+
+2026-07-14 16:19  sthen
+
+	* usr.sbin/nsd/: README.md, nsec3.c, query.c, xfrd.h, axfr.c,
+	  configure, difffile.c, ixfr.c, nsd-checkzone.8.in,
+	  nsd-control.8.in, nsd.conf.5.in, rdata.c, remote.c,
+	  xfrd-catalog-zones.c, configure.ac, convert-release-notes.sh,
+	  difffile.h, dname.c, ixfr.h, metrics.c, metrics.h, namedb.c,
+	  nsd-checkconf.8.in, nsd.8.in, nsec3.h, options.c, server.c,
+	  udb.h, verify.c, xfrd-tcp.c, xfrd.c, doc/ChangeLog, doc/README,
+	  doc/RELNOTES, simdzone/CHANGELOG.md, simdzone/README.md,
+	  simdzone/configure, simdzone/configure.ac,
+	  simdzone/src/isadetection.h, simdzone/src/generic/svcb.h,
+	  util/proxy_protocol.c, util/proxy_protocol.h: import NSD 4.15.0,
+	  ok florian
+
 2026-06-26 08:55  sthen
 
 	* usr.sbin/nsd/: aclocal.m4, config.guess, config.h.in, config.sub,
