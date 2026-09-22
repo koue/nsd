@@ -1,3 +1,31 @@
+2026-09-21 08:41  sthen
+
+	* usr.sbin/nsd/: axfr.c, buffer.h, config.h.in, configlexer.lex,
+	  configparser.y, configure, configure.ac, difffile.c, dns.c,
+	  dns.h, edns.c, edns.h, ipc.c, ixfr.c, namedb.c,
+	  nsd-checkconf.8.in, nsd-checkconf.c, nsd-checkzone.8.in,
+	  nsd-control.8.in, nsd.8.in, nsd.conf.5.in, nsd.conf.sample.in,
+	  nsec3.c, nsec3.h, options.c, options.h, query.c, query.h,
+	  rdata.c, rdata.h, remote.c, server.c, xfrd-tcp.c, xfrd-tcp.h,
+	  xfrd.c, xfrd.h, dnstap/dnstap.c, doc/ChangeLog, doc/README,
+	  doc/RELNOTES: merge NSD 4.15.2
+
+2026-09-21 08:39  sthen
+
+	* usr.sbin/nsd/: nsd-checkconf.c, nsd.conf.5.in, options.c, ixfr.c,
+	  nsd-control.8.in, nsd-checkconf.8.in, rdata.c, axfr.c, namedb.c,
+	  server.c, xfrd-tcp.h, buffer.h, dns.c, edns.h, nsd.8.in, nsec3.c,
+	  query.c, rdata.h, xfrd.h, configure, ipc.c, nsd.conf.sample.in,
+	  options.h, remote.c, config.h.in, configlexer.lex,
+	  configparser.y, configure.ac, difffile.c, dns.h, edns.c,
+	  nsd-checkzone.8.in, nsec3.h, query.h, xfrd-tcp.c, xfrd.c,
+	  metrics.c, simdzone/CHANGELOG.md, simdzone/src/generic/scanner.h,
+	  simdzone/src/generic/svcb.h, simdzone/src/westmere/type.h,
+	  dnstap/dnstap.c, doc/ChangeLog, doc/README,
+	  simdzone/include/zone.h, simdzone/src/fallback/scanner.h,
+	  simdzone/src/generic/type.h, simdzone/src/generic/types.h,
+	  doc/RELNOTES: import NSD 4.15.2, tests from phessler, ok florian
+
 2026-07-14 16:20  sthen
 
 	* usr.sbin/nsd/: README.md, axfr.c, configure, configure.ac,
