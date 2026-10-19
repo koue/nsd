@@ -1,3 +1,71 @@
+2026-10-15 18:16  bluhm
+
+	* usr.sbin/nsd/simdzone/src/: fallback/name.h, generic/base64.h,
+	  generic/format.h, generic/name.h, generic/svcb.h, generic/text.h:
+	  Backport security fixes from upstream nsd(8) version 4.15.3.
+
+	  * CVE-2026-101341: Stack overwrite from specially formatted
+	  TXT-DATA   RDATA field * CVE-2026-101339: Stack overwrite from a
+	  specially crafted and   formatted HIP RR * CVE-2026-101338: Stack
+	  overwrite from a specially crafted and   formatted SVCB or HTTPS
+	  RR * CVE-2026-101337: Stack overwrite from specially formatted
+	  base64   RDATA field
+
+	  OK sthen@ renaud@ deraadt@
+
+2026-09-27 10:06  bluhm
+
+	* usr.sbin/nsd/: README.md, aclocal.m4, axfr.c, buffer.h,
+	  config.guess, config.h.in, config.sub, configlexer.lex,
+	  configparser.y, configure, configure.ac,
+	  convert-release-notes.sh, difffile.c, difffile.h, dname.c, dns.c,
+	  dns.h, edns.c, edns.h, install-sh, ipc.c, ixfr.c, ixfr.h,
+	  metrics.c, metrics.h, namedb.c, nsd-checkconf.8.in,
+	  nsd-checkconf.c, nsd-checkzone.8.in, nsd-control.8.in, nsd.8.in,
+	  nsd.conf.5.in, nsd.conf.sample.in, nsec3.c, nsec3.h, options.c,
+	  options.h, query.c, query.h, rdata.c, rdata.h, remote.c,
+	  server.c, udb.h, verify.c, xfrd-catalog-zones.c, xfrd-tcp.c,
+	  xfrd-tcp.h, xfrd.c, xfrd.h, dnstap/dnstap.c, doc/ChangeLog,
+	  doc/README, doc/RELNOTES, simdzone/CHANGELOG.md,
+	  simdzone/README.md, simdzone/config.guess, simdzone/config.h.in,
+	  simdzone/config.sub, simdzone/configure, simdzone/configure.ac,
+	  simdzone/include/zone.h, simdzone/src/isadetection.h,
+	  simdzone/src/fallback/scanner.h, simdzone/src/generic/scanner.h,
+	  simdzone/src/generic/svcb.h, simdzone/src/generic/type.h,
+	  simdzone/src/generic/types.h, simdzone/src/westmere/type.h,
+	  util/proxy_protocol.c, util/proxy_protocol.h: import NSD 4.15.2,
+	  tests from phessler, ok florian merge NSD 4.15.2 from sthen@
+
+	  this is errata/7.9/022_nsd.patch.sig
+
+2026-09-27 10:04  bluhm
+
+	* usr.sbin/nsd/: Makefile.in, README.md, aclocal.m4,
+	  acx_nlnetlabs.m4, axfr.c, buffer.h, config.guess, config.h.in,
+	  config.sub, configlexer.lex, configparser.y, configure,
+	  configure.ac, dbaccess.c, dbcreate.c, difffile.c, difffile.h,
+	  dname.c, dname.h, dns.c, dns.h, edns.c, edns.h, install-sh,
+	  ipc.c, ixfr.c, ixfr.h, ixfrcreate.c, metrics.c, metrics.h,
+	  namedb.c, namedb.h, nsd-checkconf.8.in, nsd-checkconf.c,
+	  nsd-checkzone.8.in, nsd-control.8.in, nsd-mem.c, nsd.8.in,
+	  nsd.conf.5.in, nsd.conf.sample.in, nsec3.c, nsec3.h, options.c,
+	  options.h, packet.c, query.c, query.h, rdata.c, rdata.h,
+	  remote.c, server.c, udb.h, util.c, util.h, verify.c,
+	  xdp-server.c, xfrd-catalog-zones.c, xfrd-disk.c, xfrd-tcp.c,
+	  xfrd-tcp.h, xfrd.c, xfrd.h, zonec.c, zonec.h, dnstap/dnstap.c,
+	  dnstap/dnstap.m4, doc/ChangeLog, doc/README, doc/RELNOTES,
+	  simdzone/CHANGELOG.md, simdzone/README.md, simdzone/config.guess,
+	  simdzone/config.h.in, simdzone/config.sub, simdzone/configure,
+	  simdzone/configure.ac, simdzone/include/zone.h,
+	  simdzone/src/isadetection.h, simdzone/src/fallback/scanner.h,
+	  simdzone/src/generic/scanner.h, simdzone/src/generic/svcb.h,
+	  simdzone/src/generic/type.h, simdzone/src/generic/types.h,
+	  simdzone/src/westmere/type.h, util/proxy_protocol.c,
+	  util/proxy_protocol.h: import NSD 4.15.2, tests from phessler, ok
+	  florian merge NSD 4.15.2 from sthen@
+
+	  this is errata/7.8/058_nsd.patch.sig
+
 2026-09-21 08:41  sthen
 
 	* usr.sbin/nsd/: axfr.c, buffer.h, config.h.in, configlexer.lex,
