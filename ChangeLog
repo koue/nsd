@@ -1,3 +1,87 @@
+2026-10-22 11:32  sthen
+
+	* usr.sbin/nsd/: aclocal.m4, buffer.h, config.guess, config.h.in,
+	  config.sub, configlexer.lex, configparser.y, configure,
+	  configure.ac, difffile.c, dns.c, dns.h, edns.h, install-sh,
+	  ipc.c, ixfr.c, nsd-checkconf.8.in, nsd-checkconf.c,
+	  nsd-checkzone.8.in, nsd-control.8.in, nsd-control.c, nsd.8.in,
+	  nsd.conf.5.in, nsd.conf.sample.in, nsec3.c, options.c, options.h,
+	  query.c, rdata.c, rdata.h, server.c, util.c,
+	  xfrd-catalog-zones.c, xfrd-tcp.c, xfrd.c, doc/ChangeLog,
+	  doc/README, doc/RELNOTES, simdzone/Makefile.in,
+	  simdzone/configure, simdzone/src/generic/text.h: merge nsd 4.15.4
+
+2026-10-22 11:31  sthen
+
+	* usr.sbin/nsd/: config.guess, config.h.in, config.sub, install-sh,
+	  aclocal.m4, configure, util.c, xfrd-catalog-zones.c, xfrd-tcp.c,
+	  xfrd.c, rdata.h, server.c, nsd.conf.5.in, nsd.conf.sample.in,
+	  nsec3.c, options.c, options.h, query.c, rdata.c, configparser.y,
+	  configure.ac, difffile.c, dns.c, dns.h, edns.h, ipc.c, ixfr.c,
+	  nsd-checkconf.8.in, nsd-checkconf.c, nsd-checkzone.8.in,
+	  nsd-control.8.in, nsd-control.c, nsd.8.in, buffer.h,
+	  configlexer.lex, doc/ChangeLog, doc/README, doc/RELNOTES,
+	  simdzone/CHANGELOG.md, simdzone/Makefile.in,
+	  simdzone/config.guess, simdzone/config.h.in, simdzone/config.sub,
+	  simdzone/configure, simdzone/configure.ac,
+	  simdzone/src/isadetection.h, simdzone/src/generic/name.h,
+	  simdzone/src/generic/svcb.h, simdzone/src/generic/text.h,
+	  simdzone/src/generic/type.h, simdzone/src/generic/types.h,
+	  simdzone/src/westmere/type.h, simdzone/include/zone.h,
+	  simdzone/src/fallback/name.h, simdzone/src/generic/base64.h,
+	  simdzone/src/generic/format.h: import nsd 4.15.4, ok florian
+
+2026-10-19 01:36  bluhm
+
+	* usr.sbin/nsd/simdzone/src/: fallback/name.h, generic/base64.h,
+	  generic/format.h, generic/name.h, generic/svcb.h, generic/text.h:
+	  Backport security fixes from upstream nsd(8) version 4.15.3.
+
+	  * CVE-2026-101341: Stack overwrite from specially formatted
+	  TXT-DATA   RDATA field * CVE-2026-101339: Stack overwrite from a
+	  specially crafted and   formatted HIP RR * CVE-2026-101338: Stack
+	  overwrite from a specially crafted and   formatted SVCB or HTTPS
+	  RR * CVE-2026-101337: Stack overwrite from specially formatted
+	  base64   RDATA field
+
+	  from bluhm@; OK sthen@ renaud@ deraadt@
+
+	  this is errata/8.0/002_nsd.patch.sig
+
+2026-10-19 01:35  bluhm
+
+	* usr.sbin/nsd/simdzone/src/: fallback/name.h, generic/base64.h,
+	  generic/format.h, generic/name.h, generic/svcb.h, generic/text.h:
+	  Backport security fixes from upstream nsd(8) version 4.15.3.
+
+	  * CVE-2026-101341: Stack overwrite from specially formatted
+	  TXT-DATA   RDATA field * CVE-2026-101339: Stack overwrite from a
+	  specially crafted and   formatted HIP RR * CVE-2026-101338: Stack
+	  overwrite from a specially crafted and   formatted SVCB or HTTPS
+	  RR * CVE-2026-101337: Stack overwrite from specially formatted
+	  base64   RDATA field
+
+	  from bluhm@; OK sthen@ renaud@ deraadt@
+
+	  this is errata/7.9/037_nsd.patch.sig
+
+2026-10-19 01:34  bluhm
+
+	* usr.sbin/nsd/simdzone/src/: fallback/name.h, generic/base64.h,
+	  generic/format.h, generic/name.h, generic/svcb.h, generic/text.h:
+	  Backport security fixes from upstream nsd(8) version 4.15.3.
+
+	  * CVE-2026-101341: Stack overwrite from specially formatted
+	  TXT-DATA   RDATA field * CVE-2026-101339: Stack overwrite from a
+	  specially crafted and   formatted HIP RR * CVE-2026-101338: Stack
+	  overwrite from a specially crafted and   formatted SVCB or HTTPS
+	  RR * CVE-2026-101337: Stack overwrite from specially formatted
+	  base64   RDATA field
+
+	  from bluhm@; OK sthen@ renaud@ deraadt@
+
+	  this is errata/7.8/073_nsd.patch.sig
+
 2026-10-15 18:16  bluhm
 
 	* usr.sbin/nsd/simdzone/src/: fallback/name.h, generic/base64.h,
